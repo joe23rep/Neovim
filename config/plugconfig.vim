@@ -68,12 +68,12 @@ let g:vimwiki_list = [{'path': '~/.config/nvim/vimwiki/',
 " Hexokinase---------------------------------------------------------------------------------
 
 " Set Color Highlight Style
-let g:Hexokinase_highlighters = ['foregroundfull']
+let g:Hexokinase_highlighters = ['backgroundfull']
 " let g:Hexokinase_highlighters = ['virtual']
 
 " Set Type to display colors
-let g:Hexokinase_optInPatterns = 'colour_names'
-" let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+" let g:Hexokinase_optInPatterns = 'colour_names'
+let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
 
 
 " Tmux --------------------------------------------------------------------------------------
@@ -120,3 +120,21 @@ endif
 " Indentlines special coc settings------------------------------------------------------------
 
 let g:indentLine_fileTypeExclude = ['coc-explorer']
+
+
+" Fzf Preview---------------------------------------------------------------------------------
+
+" Floating window size ratio
+let g:fzf_preview_floating_window_rate = 0.8
+
+" Use vim-devicons
+let g:fzf_preview_use_dev_icons = 1
+
+" devicons character width
+let g:fzf_preview_dev_icon_prefix_string_length = 3
+
+" Devicons can make fzf-preview slow when the number of results is high
+" By default icons are disable when number of results is higher that 5000
+let g:fzf_preview_dev_icons_limit = 5000
+
+
