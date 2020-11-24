@@ -224,6 +224,8 @@ let g:which_key_map.F = {
       \ 'f'   :  [':FloatermNew fzf', 'open fzf in Terminal']      ,
       \ 'rg'  :  [':Rg'             , 'search for words in document']      ,
       \ 'ff'  :  [':Files'          , 'search files in CWD']      ,
+      \ 'bm'  :  [':CocCommand fzf-preview.Bookmarks'          , 'show Bookmarks']      ,
+      \ 'di'  :  [':CocCommand fzf-preview.CocDiagnostics'     , 'show Diagnostics']      ,
       \ }
 
 
@@ -277,6 +279,8 @@ let g:which_key_map.G = {
       \ 'a'     : [':Git add'        , 'add']   ,
       \ 'c'     : [':Git commit'     , 'commit']   ,
       \ 'p'     : [':Git push'       , 'push']     ,
+      \ 'ga'    : [':CocCommand fzf-preview.GitActions'       , 'Git Actions']     ,
+      \ 'gs'    : [':CocCommand fzf-preview.GitStatus'        , 'Git Status']     ,
       \ 'd'     : [':Git diff'       , 'diff'] ,
       \ 'l'     : [':Git log'        , 'show log']      ,
       \ 'R'     : [':GRemove'        , 'remove commit']      ,
@@ -382,6 +386,11 @@ let g:which_key_map.gy = 'yank/comment/paste block'
 nmap tt :TagbarToggle<CR>
 let g:which_key_map.tt = 'toggle tagbar'
 
+nmap <silent><leader>ch       :CocCommand fzf-preview.Changes<CR>
+let g:which_key_map.ch = 'preview Changes'
+
+nmap <silent><leader>j        :CocCommand fzf-preview.Jumps<CR>
+let g:which_key_map.j = 'show Jumps'
 
 " let g:which_key_map.f = { 'name' : '+file' }
 
@@ -396,143 +405,78 @@ let g:which_key_map.tt = 'toggle tagbar'
 "        |___/
 
 let g:which_key_map.a = 'which_key_ignore'
-
 let g:which_key_map.ee = 'which_key_ignore'
-
 let g:which_key_map.sd = 'which_key_ignore'
-
 let g:which_key_map.ws = 'which_key_ignore'
-
 let g:which_key_map.qq = 'which_key_ignore'
-
 let g:which_key_map.os = 'which_key_ignore'
-
 let g:which_key_map.ds = 'which_key_ignore'
-
 let g:which_key_map.ss = 'which_key_ignore'
-
 let g:which_key_map.dt = 'which_key_ignore'
-
 let g:which_key_map.ot = 'which_key_ignore'
-
 let g:which_key_map.st = 'which_key_ignore'
-
+let g:which_key_map.ga = 'which_key_ignore'
+let g:which_key_map.gs = 'which_key_ignore'
+let g:which_key_map.bm = 'which_key_ignore'
+let g:which_key_map.st = 'which_key_ignore'
 let g:which_key_map.vs = 'which_key_ignore'
-
-let g:which_key_map.j = 'which_key_ignore'
-
 let g:which_key_map.nn = 'which_key_ignore'
-
 let g:which_key_map.r = 'which_key_ignore'
-
 let g:which_key_map.sr = 'which_key_ignore'
-
 let g:which_key_map.c = 'which_key_ignore'
-
 let g:which_key_map.sf = 'which_key_ignore'
-
 let g:which_key_map.br = 'which_key_ignore'
-
 let g:which_key_map.ws = 'which_key_ignore'
-
+let g:which_key_map.bo = 'which_key_ignore'
 " let g:which_key_map.gv = 'which_key_ignore'
-
 let g:which_key_map.pi = 'which_key_ignore'
-
 let g:which_key_map.e = 'which_key_ignore'
-
 let g:which_key_map.gvv = 'which_key_ignore'
-
 let g:which_key_map.th = 'which_key_ignore'
-
 let g:which_key_map.tha = 'which_key_ignore'
-
 let g:which_key_map.tr = 'which_key_ignore'
-
 let g:which_key_map.tra = 'which_key_ignore'
-
 let g:which_key_map.nb = 'which_key_ignore'
-
 let g:which_key_map.b = 'which_key_ignore'
-
 let g:which_key_map.bn = 'which_key_ignore'
-
 let g:which_key_map.n = 'which_key_ignore'
-
 let g:which_key_map.bp = 'which_key_ignore'
-
 let g:which_key_map.f = 'which_key_ignore'
-
 let g:which_key_map.fb = 'which_key_ignore'
-
 let g:which_key_map.ff = 'which_key_ignore'
-
 let g:which_key_map.m = 'which_key_ignore'
-
 let g:which_key_map.tc = 'which_key_ignore'
-
 let g:which_key_map.mm = 'which_key_ignore'
-
 let g:which_key_map.rg = 'which_key_ignore'
-
 let g:which_key_map.z = 'which_key_ignore'
-
 let g:which_key_map.g = 'which_key_ignore'
-
 let g:which_key_map.v = 'which_key_ignore'
-
 let g:which_key_map.t = 'which_key_ignore'
-
 let g:which_key_map.trb = 'which_key_ignore'
-
 let g:which_key_map.ts = 'which_key_ignore'
-
 let g:which_key_map.ths = 'which_key_ignore'
-
 let g:which_key_map.cb = 'which_key_ignore'
-
 let g:which_key_map.1 = 'which_key_ignore'
-
 let g:which_key_map.2 = 'which_key_ignore'
-
 let g:which_key_map.3 = 'which_key_ignore'
-
 let g:which_key_map.4 = 'which_key_ignore'
-
 let g:which_key_map.5 = 'which_key_ignore'
-
 let g:which_key_map.6 = 'which_key_ignore'
-
 let g:which_key_map.7 = 'which_key_ignore'
-
 let g:which_key_map.8 = 'which_key_ignore'
-
 let g:which_key_map.hs = 'which_key_ignore'
-
 let g:which_key_map.bb = 'which_key_ignore'
-
 let g:which_key_map.ga = 'which_key_ignore'
-
 let g:which_key_map.ga = 'which_key_ignore'
-
 let g:which_key_map.gc = 'which_key_ignore'
-
 let g:which_key_map.gp = 'which_key_ignore'
-
 let g:which_key_map.q = 'which_key_ignore'
-
 let g:which_key_map.gd = 'which_key_ignore'
-
 let g:which_key_map.gr = 'which_key_ignore'
-
 let g:which_key_map.C = 'which_key_ignore'
-
 let g:which_key_map.rr = 'which_key_ignore'
-
 let g:which_key_map.br = 'which_key_ignore'
-
 let g:which_key_map.s = 'which_key_ignore'
-
 
 "---------------------------------------------------------------------------
 " to delete prefix and prefix items:
