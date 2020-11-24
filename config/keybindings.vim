@@ -27,8 +27,8 @@ nmap cy yyccp
 " Map gy to copy, comment out and paste the current paragraph
 nmap gy yipgcip}p
 
-" Map gg to comment out the current paragraph without selecting it first
-nmap gv gcip
+" Map cg to comment out the current paragraph without selecting it first
+nmap cg gcip
 
 " Tab / Shift Tab to switch buffers
 nmap <S-Tab> :bp<CR>
@@ -193,9 +193,7 @@ nmap <silent><leader>tt :TagbarToggle<CR>
 
 " FZF ----------------------------------------------------------
 
-nmap <silent><leader>fb :Buffers<CR>
 nmap <silent><leader>m  :History<CR>
-nmap <silent><leader>mm :History/<CR>
 nmap <silent><leader>C  :Colors<CR>
 nmap <silent><leader>sd :Lines<CR>
 nmap <silent><leader>s  :BLines<CR>
@@ -238,7 +236,7 @@ nmap <silent><leader>ths :ToHSLAAll<CR>
 
 nmap <silent><leader>lg :FloatermNew  cd ~/Dots && lazygit<CR>
 nmap <silent><leader>rr :FloatermNew ranger <cr>
-nmap <silent><leader>br :FloatermNew broot <cr>
+nmap <silent><leader>bo :FloatermNew broot <cr>
 
 
 " Coc Mappings----------------------------------------------------
@@ -276,6 +274,18 @@ endif
 " Vimwiki Remappings-----------------------------------------------
 
 " nmap <C-CR> <Plug>VimwikiFollowLink
+
+
+" Coc Fzf Preview--------------------------------------------------
+
+nmap <silent> <leader>ch       :CocCommand fzf-preview.Changes<CR>
+nmap <silent> <leader>j        :CocCommand fzf-preview.Jumps<CR>
+nmap <silent> <leader>ga       :CocCommand fzf-preview.GitActions<CR>
+nmap <silent> <leader>ga       :CocCommand fzf-preview.GitActions<CR>
+nmap <silent> <leader>gs       :CocCommand fzf-preview.GitStatus<CR>
+nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
+
+
 
 " Leader Key Mappings ----------------------------------------------------------------------
 "   _                   _             _  __
@@ -325,9 +335,6 @@ nmap <silent><leader>nb :enew<CR>
 
 " Source current buffer
 nmap <leader>sf :source %<cr>
-
-" Open Jumplist
-nmap <Leader>j :call GotoJump()<CR>
 
 " Open Ranger inside Floaterm
 nmap <silent><leader>rr :FloatermNew ranger <cr>
