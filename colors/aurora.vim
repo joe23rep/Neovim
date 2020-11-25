@@ -732,6 +732,13 @@ hi! link Sneak Search
 hi! link SneakLabel Search
 
 " }}}
+
+" Vim Bookmarks: {{{
+
+hi! link BookmarkSign AuroraCyan
+hi! link BookmarkAnnotationSign AuroraAqua
+"}}}
+
 " Indent Guides: {{{
 
 if !exists('g:indent_guides_auto_colors')
