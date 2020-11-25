@@ -1,5 +1,5 @@
 " Summary:
-" This is a dark 256-color scheme for vim with mild contrast and low 
+" This is a dark 256-color scheme for vim with mild contrast and low
 " distraction.
 "
 " Description:
@@ -32,7 +32,7 @@ let colors_name="simple-dark"
 set background=dark
 
 " General Colors
-hi Normal       guifg=#d7d7d7   guibg=#262626   ctermfg=251    ctermbg=235       gui=none      cterm=none
+hi Normal       guifg=#d7d7d7   guibg=#00010695   ctermfg=251    ctermbg=235       gui=none      cterm=none
 hi Comment      guifg=#8a8a8a   guibg=NONE      ctermfg=245    ctermbg=NONE      gui=none      cterm=none
 hi Constant     guifg=#d7d7af   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
 hi Identifier   guifg=#afd7d7   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
