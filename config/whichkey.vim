@@ -75,15 +75,15 @@ let g:which_key_map =  {}
 " Buffer Mappings-------------------------------------------------------
 
 let g:which_key_map.B = {
-      \ 'name'  : '+Buffer' ,
-      \ 'cb'    : ['bd'                           , 'close buffer']   ,
-      \ 'nb'    : ['enew'                         , 'new buffer']      ,
-      \ 'n'     : ['bnext'                        , 'next buffer']     ,
-      \ 'b'     : ['bprevious'                    , 'previous buffer'] ,
-      \ 'fb'    : ['Buffers'                      , 'fzf buffer']      ,
-      \ 'bb'    : [':b#'                          , 'go to last changed buffer']  ,
-      \ '1'     : [':b1'                          , 'go to buffer 1']  ,
-      \ '2'     : [':b2'                          , 'go to buffer 2']  ,
+      \ 'name'  : '+Bookmarks' ,
+      \ 'mm'    : [':BookmarkToggle<CR>'                           , 'set or remove Bookmarks']   ,
+      \ 'mi'    : [':BookmarkAnnotate<CR>'                         , 'add or remove text to Bookmark']   ,
+      \ 'mn'    : [':BookmarkNext<CR>'                             , 'go to next Bookmark']   ,
+      \ 'mp'    : [':BookmarkPrev<CR>'                             , 'go to previous Bookmark']   ,
+      \ 'mc'    : [':BookmarkClear<CR>'                            , 'clear Bookmarks of current buffer']   ,
+      \ 'mx'    : [':BookmarkClearAll<CR>'                         , 'clear all Bookmarks']   ,
+      \ 'ms'    : [':BookmarkSave /file/path'                      , 'save all Bookmarks to a file']   ,
+      \ 'ml'    : [':BookmarkLoad /file/path'                      , 'load Bookmarks from file']   ,
       \ }
 
 
@@ -113,58 +113,59 @@ let g:which_key_map.E = {
 
 " Open Files Mappings---------------------------------------------------
 
-let g:which_key_map.o = {
-      \ 'name' : '+open-Files' ,
-      \ 'i'    : [':tabedit ~/.config/nvim/init.vim'                      , 'open init.vim']   ,
-      \ 't'    : [':tabedit ~/Dots/.tmux.conf'                            , 'open tmux.conf']   ,
-      \ 'z'    : [':tabedit ~/Dots/.zshrc'                                , 'open zshrc']   ,
-      \ 'gg'   : [':tabedit ~/.config/nvim/colors/gruvbox-neon3.vim'      , 'open gruvbox-neon3']   ,
-      \ 'c'    : [':tabedit ~/.config/nvim/config/coc.vim'                , 'open coc.vim']   ,
-      \ 'w'    : [':tabedit ~/.config/nvim/config/whichkey.vim'           , 'open whichkey.vim']   ,
-      \ 'f'    : [':tabedit ~/.config/nvim/config/fzf.vim'                , 'open fzf.vim']   ,
-      \ 'g'    : [':tabedit ~/.config/nvim/config/general.vim'            , 'open general.vim']   ,
-      \ 'l'    : [':tabedit ~/.config/nvim/config/lightline.vim'          , 'open lightline.vim']   ,
-      \ 'p'    : [':tabedit ~/.config/nvim/config/plugins.vim'            , 'open plugins.vim']   ,
-      \ 'n'    : [':tabedit ~/.config/nvim/config/nerdtree.vim'           , 'open nerdtree.vim']   ,
-      \ 'tt'   : [':tabedit ~/.config/nvim/config/toggle.vim'             , 'open toggle.vim']   ,
-      \ 'ff'   : [':tabedit ~/.config/nvim/config/floaterm.vim'           , 'open floaterm.vim']   ,
-      \ 'k'    : [':tabedit ~/.config/nvim/config/keybindings.vim'        , 'open keybindings.vim']   ,
-      \ 'cc'   : [':tabedit ~/.config/nvim/coc-settings.json'             , 'open coc-settings.json']   ,
-      \ 'll'   : [':tabedit ~/.config/nvim/lua/plug-colorizer.lua'        , 'open plug.colorizer.lua']   ,
-      \ }
+" let g:which_key_map.o = {
+"       \ 'name' : '+open-Files' ,
+"       \ 'i'    : [':tabedit ~/.config/nvim/init.vim'                      , 'open init.vim']   ,
+"       \ 't'    : [':tabedit ~/Dots/.tmux.conf'                            , 'open tmux.conf']   ,
+"       \ 'z'    : [':tabedit ~/Dots/.zshrc'                                , 'open zshrc']   ,
+"       \ 'g'    : [':tabedit ~/.config/nvim/colors/aurora.vim'             , 'open colortheme']   ,
+"       \ 'c'    : [':tabedit ~/.config/nvim/config/coc.vim'                , 'open coc.vim']   ,
+"       \ 'w'    : [':tabedit ~/.config/nvim/config/whichkey.vim'           , 'open whichkey.vim']   ,
+"       \ 'f'    : [':tabedit ~/.config/nvim/config/fzf.vim'                , 'open fzf.vim']   ,
+"       \ 'ge'    : [':tabedit ~/.config/nvim/config/general.vim'            , 'open general.vim']   ,
+"       \ 'l'    : [':tabedit ~/.config/nvim/config/lightline.vim'          , 'open lightline.vim']   ,
+"       \ 'p'    : [':tabedit ~/.config/nvim/config/plugins.vim'            , 'open plugins.vim']   ,
+"       \ 'n'    : [':tabedit ~/.config/nvim/config/nerdtree.vim'           , 'open nerdtree.vim']   ,
+"       \ 'tt'   : [':tabedit ~/.config/nvim/config/toggle.vim'             , 'open toggle.vim']   ,
+"       \ 'ff'   : [':tabedit ~/.config/nvim/config/floaterm.vim'           , 'open floaterm.vim']   ,
+"       \ 'k'    : [':tabedit ~/.config/nvim/config/keybindings.vim'        , 'open keybindings.vim']   ,
+"       \ 'cc'   : [':tabedit ~/.config/nvim/coc-settings.json'             , 'open coc-settings.json']   ,
+"       \ 'll'   : [':tabedit ~/.config/nvim/lua/plug-colorizer.lua'        , 'open plug.colorizer.lua']   ,
+"       \ }
 
 
 " Normal Mode Mappings--------------------------------------------------
 
-let g:which_key_map.N = {
-      \ 'name' : '+Normal-Mode'      ,
-      \ 'e'    : ['e'                , 'go to end of word']   ,
-      \ 'f'    : ['f'                , 'find char after cursor in line']   ,
-      \ 'qq'   : ['qq'               , 'add letter to open macros']   ,
-      \ 'm'    : ['m'                , 'mark current line and position']   ,
-      \ 'o'    : ['o'                , 'go line below /in Insert mode']   ,
-      \ 'O'    : ['O'                , 'go line above /in Insert mode']   ,
-      \ 'M'    : ['M'                , 'go to middle of screen']   ,
-      \ 'S'    : ['S'                , 'deletes line and /in Insert mode']   ,
-      \ 'n'    : ['n'                , 'repeat last search']   ,
-      \ 'C'    : ['C'                , 'Change to end of line']   ,
-      \ 'c'    : ['c'                , 'Insert mode/ overrides text']   ,
-      \ 'cc'   : ['cc'               , 'comment current line']   ,
-      \ 'gc'   : ['gc'               , 'comment selected area']   ,
-      \ 'jk'   : ['jk'               , 'esc']   ,
-      \ 'L'    : ['$'                , 'go to end of line']   ,
-      \ 'H'    : ['^'                , 'go to start of line']   ,
-      \ 'J'    : ['}'                , 'jump paragraph down']   ,
-      \ 'K'    : ['{'                , 'jump paragraph up']   ,
-      \ 'U'    : ['<C-R>'            , 'Redo']   ,
-      \ 'Ctrl f': ['/'               , 'search document']   ,
-      \ 'Ctrl o': ['<C-o>'           , 'go to previous worked line']   ,
-      \ 'Ctrl i': ['<C-i>'           , 'go back to last line']   ,
-      \ 'Y'    : ['y$'               , 'copy to end of line']   ,
-      \ '+'    : [':call Toggle'     , 'toggle Boolean values']   ,
-      \ 'Alt i': ['<Plug>nextvalInc' , 'increase value']   ,
-      \ 'Alt d': ['<Plug>nextvalDec' , 'decrease value']   ,
-      \ 'gv'   : [':GV!'             , 'open commit browser']   ,
+" let g:which_key_map.N = {
+let g:which_key_map.o = {
+      \ 'name'  : '+Normal-Mode'      ,
+      \ 'e'     : ['e'                , 'go to end of word']   ,
+      \ 'f'     : ['f'                , 'find char after cursor in line']   ,
+      \ 'qq'    : ['qq'               , 'add letter to open macros']   ,
+      \ 'm'     : ['m'                , 'mark current line and position']   ,
+      \ 'o'     : ['o'                , 'go line below /in Insert mode']   ,
+      \ 'O'     : ['O'                , 'go line above /in Insert mode']   ,
+      \ 'M'     : ['M'                , 'go to middle of screen']   ,
+      \ 'S'     : ['S'                , 'deletes line and /in Insert mode']   ,
+      \ 'n'     : ['n'                , 'repeat last search']   ,
+      \ 'C'     : ['C'                , 'Change to end of line']   ,
+      \ 'c'     : ['c'                , 'Insert mode/ overrides text']   ,
+      \ 'cc'    : ['cc'               , 'comment current line']   ,
+      \ 'gc'    : ['gc'               , 'comment selected area']   ,
+      \ 'jk'    : ['jk'               , 'esc']   ,
+      \ 'L'     : ['$'                , 'go to end of line']   ,
+      \ 'H'     : ['^'                , 'go to start of line']   ,
+      \ 'J'     : ['}'                , 'jump paragraph down']   ,
+      \ 'K'     : ['{'                , 'jump paragraph up']   ,
+      \ 'U'     : ['<C-R>'            , 'Redo']   ,
+      \ 'Ctrl f': ['/'                , 'search document']   ,
+      \ 'Ctrl o': ['<C-o>'            , 'jumplist forward']   ,
+      \ 'Ctrl i': ['<C-i>'            , 'jumplist backward']   ,
+      \ 'Y'     : ['y$'               , 'copy to end of line']   ,
+      \ '+'     : [':call Toggle'     , 'toggle Boolean values']   ,
+      \ 'Alt i' : ['<Plug>nextvalInc' , 'increase value']   ,
+      \ 'Alt d' : ['<Plug>nextvalDec' , 'decrease value']   ,
+      \ 'gv'    : [':GV!'             , 'open commit browser']   ,
       \ }
 
 
@@ -351,8 +352,7 @@ let g:which_key_map.l = {
 "                    __/ |                         | |    | |                __/ |
 "                   |___/                          |_|    |_|               |___/
 
-
-" let g:which_key_map.f = { 'name' : '+file' }
+" Single Mappings
 
 nnoremap <leader>a :AutoSaveToggle<CR>
 
@@ -374,20 +374,20 @@ nnoremap <silent> <leader>ls :Bracey<CR>
 
 
 nnoremap <silent>gv :GV!<CR>
-let g:which_key_map.gv = 'show commits'
+let g:which_key_map.gv = 'show Commits'
 
 nnoremap cy yyccp
-let g:which_key_map.cy = 'yank/comment/paste line'
+let g:which_key_map.cy = 'yank/comment/paste Line'
 
 " Map gy to copy, comment out and paste the current paragraph
 nnoremap gy v$Jyv$JgcJp
-let g:which_key_map.gy = 'yank/comment/paste block'
+let g:which_key_map.gy = 'yank/comment/paste Block'
 
 nmap tt :TagbarToggle<CR>
-let g:which_key_map.tt = 'toggle tagbar'
+let g:which_key_map.tt = 'toggle Tagbar'
 
 nmap <silent><leader>ch       :CocCommand fzf-preview.Changes<CR>
-let g:which_key_map.ch = 'preview Changes'
+let g:which_key_map.ch = 'show Changes'
 
 nmap <silent><leader>j        :CocCommand fzf-preview.Jumps<CR>
 let g:which_key_map.j = 'show Jumps'
@@ -403,6 +403,8 @@ let g:which_key_map.j = 'show Jumps'
 "  \___/ \__, ||_| |_| \___/ |_|   \___| \_____/|_||___/ \__|
 "         __/ |
 "        |___/
+
+" Ignore List
 
 let g:which_key_map.a = 'which_key_ignore'
 let g:which_key_map.ee = 'which_key_ignore'
@@ -456,14 +458,6 @@ let g:which_key_map.trb = 'which_key_ignore'
 let g:which_key_map.ts = 'which_key_ignore'
 let g:which_key_map.ths = 'which_key_ignore'
 let g:which_key_map.cb = 'which_key_ignore'
-let g:which_key_map.1 = 'which_key_ignore'
-let g:which_key_map.2 = 'which_key_ignore'
-let g:which_key_map.3 = 'which_key_ignore'
-let g:which_key_map.4 = 'which_key_ignore'
-let g:which_key_map.5 = 'which_key_ignore'
-let g:which_key_map.6 = 'which_key_ignore'
-let g:which_key_map.7 = 'which_key_ignore'
-let g:which_key_map.8 = 'which_key_ignore'
 let g:which_key_map.hs = 'which_key_ignore'
 let g:which_key_map.bb = 'which_key_ignore'
 let g:which_key_map.ga = 'which_key_ignore'
@@ -482,12 +476,7 @@ let g:which_key_map.s = 'which_key_ignore'
 " to delete prefix and prefix items:
 "
 let g:which_key_map._ = {'name' : 'which_key_ignore'}
-" let g:which_key_map._.B = 'which_key_ignore'
-let g:which_key_map._.h = 'which_key_ignore'
-let g:which_key_map._.p = 'which_key_ignore'
-let g:which_key_map._.b = 'which_key_ignore'
 let g:which_key_map._._ = 'which_key_ignore'
-let g:which_key_map._.d = 'which_key_ignore'
 
 
 
