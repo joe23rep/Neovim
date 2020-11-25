@@ -138,3 +138,8 @@ let g:fzf_preview_dev_icon_prefix_string_length = 3
 let g:fzf_preview_dev_icons_limit = 5000
 
 
+" Vim Bookmarks-------------------------------------------------------------------------------
+
+let g:bookmark_sign = '♣'
+let g:bookmark_highlight_lines = 0
+let g:bookmark_annotation_sign = '✑'
