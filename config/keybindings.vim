@@ -138,6 +138,7 @@ nmap <C-yy>  "+yy
 
 
 " Escape mappings ----------------------------------------------
+
 imap jk <esc>
 vmap jk <esc>
 cmap jk <C-c>
@@ -162,13 +163,18 @@ vmap + <esc>:call Toggle()<CR>
 
 " Vim-Session---------------------------------------------------
 
-nmap <leader>ss :SaveSession!<cr>
-nmap <leader>os :OpenSession!<cr>
+nmap <leader>ss :SaveSession!<CR>
+nmap <leader>os :OpenSession!<CR>
 
 
 " Bracey--------------------------------------------------------
 
-nmap <leader>br :Bracey<CR>
+nmap <leader>ls :Bracey<CR>
+
+
+" Broot---------------------------------------------------------
+
+nmap <leader>br :FloatermNew broot<CR>
 
 
 " Auto Close Tag -----------------------------------------------
@@ -217,6 +223,7 @@ nmap ( <Plug>(GitGutterPrevHunk)
 
 
 " Easymotion -----------------------------------------------------
+
 nmap ,, <Plug>(easymotion-prefix)
 
 
@@ -235,8 +242,8 @@ nmap <silent><leader>ths :ToHSLAAll<CR>
 " Floaterm--------------------------------------------------------
 
 nmap <silent><leader>lg :FloatermNew  cd ~/Dots && lazygit<CR>
-nmap <silent><leader>rr :FloatermNew ranger <cr>
-nmap <silent><leader>bo :FloatermNew broot <cr>
+nmap <silent><leader>rr :FloatermNew ranger <CR>
+nmap <silent><leader>bo :FloatermNew broot <CR>
 
 
 " Coc Mappings----------------------------------------------------
@@ -251,9 +258,9 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <CR> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -270,21 +277,12 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-
-" Vimwiki Remappings-----------------------------------------------
-
-" nmap <C-CR> <Plug>VimwikiFollowLink
-
-
-" Coc Fzf Preview--------------------------------------------------
-
+" Coc Fzf Preview
 nmap <silent> <leader>ch       :CocCommand fzf-preview.Changes<CR>
 nmap <silent> <leader>j        :CocCommand fzf-preview.Jumps<CR>
 nmap <silent> <leader>ga       :CocCommand fzf-preview.GitActions<CR>
-nmap <silent> <leader>ga       :CocCommand fzf-preview.GitActions<CR>
 nmap <silent> <leader>gs       :CocCommand fzf-preview.GitStatus<CR>
 nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
-
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
@@ -325,7 +323,7 @@ nmap <leader>sr :%s//g<left><left>
 nmap <leader>r :%s/<C-r><C-w>//g<Left><Left>
 
 " Stop showing Search highlights
-nmap <silent><leader>nh :let @/=""<cr>
+nmap <silent><leader>nh :let @/=""<CR>
 
 " Plug install shortcut
 nmap <silent><leader>pi :PlugInstall<CR>
@@ -334,11 +332,11 @@ nmap <silent><leader>pi :PlugInstall<CR>
 nmap <silent><leader>nb :enew<CR>
 
 " Source current buffer
-nmap <leader>sf :source %<cr>
+nmap <leader>sf :source %<CR>
 
 " Open Ranger inside Floaterm
-nmap <silent><leader>rr :FloatermNew ranger <cr>
-" nmap <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
+nmap <silent><leader>rr :FloatermNew ranger <CR>
+" nmap <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <CR>
 
 
 "---------------------------------------------------------------

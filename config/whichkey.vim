@@ -392,6 +392,8 @@ let g:which_key_map.ch = 'show Changes'
 nmap <silent><leader>j        :CocCommand fzf-preview.Jumps<CR>
 let g:which_key_map.j = 'show Jumps'
 
+nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
+let g:which_key_map.bm = 'show Bookmarks'
 " let g:which_key_map.f = { 'name' : '+file' }
 
 
@@ -419,7 +421,6 @@ let g:which_key_map.ot = 'which_key_ignore'
 let g:which_key_map.st = 'which_key_ignore'
 let g:which_key_map.ga = 'which_key_ignore'
 let g:which_key_map.gs = 'which_key_ignore'
-let g:which_key_map.bm = 'which_key_ignore'
 let g:which_key_map.st = 'which_key_ignore'
 let g:which_key_map.vs = 'which_key_ignore'
 let g:which_key_map.nn = 'which_key_ignore'

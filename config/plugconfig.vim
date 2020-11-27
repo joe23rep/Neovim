@@ -45,7 +45,7 @@ let g:tagbar_width = 30
 " Open Tags with single click
 let g:tagbar_singleclick = 1
 
-" Automatically open and close tagbar
+" Automatically open and close tagbar based on filetype
 autocmd BufWinEnter *.css,*.html,*.scss :TagbarOpen
 autocmd BufWinLeave *.css,*.html,*.scss :TagbarClose
 
@@ -61,6 +61,7 @@ let g:gitgutter_sign_added = '+'
 
 " Vimwiki------------------------------------------------------------------------------------
 
+" Set markdown as wiki language
 let g:vimwiki_list = [{'path': '~/.config/nvim/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 

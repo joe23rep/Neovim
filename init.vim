@@ -16,8 +16,8 @@
 source ~/.config/nvim/config/general.vim
 source ~/.config/nvim/config/plugins.vim
 source ~/.config/nvim/config/coc.vim
-source ~/.config/nvim/config/whichkey.vim
 source ~/.config/nvim/config/keybindings.vim
+source ~/.config/nvim/config/whichkey.vim
 source ~/.config/nvim/config/toggle.vim
 source ~/.config/nvim/config/lightline.vim
 source ~/.config/nvim/config/fzf.vim
