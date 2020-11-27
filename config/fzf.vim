@@ -9,20 +9,6 @@
 
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
 
-
-" Fzf statusbar config (lightline style)
-" function! s:fzf_statusline()
-"     " setlocal statusline=%#fzf1#\ \ %#fzf2#fzf%#fzf3#
-" endfunction
-"
-" autocmd! User FzfStatusLine call <SID>fzf_statusline()
-"
-" " Colors for fzf statusbar
-" hi fzf1 guifg=#292c33  guibg=#00eeff
-" hi fzf2 guifg=#292c33  guibg=#00eeff
-" hi fzf3 guifg=#00eeff  guibg=#292c33
-
-
 " Add vim directory for shortcutting
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 
@@ -30,29 +16,12 @@ command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
 
-" command! -bang -nargs=? -complete=dir Files
-"             \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-
 " All files
 command! -nargs=? -complete=dir AF
             \ call fzf#run(fzf#wrap(fzf#vim#with_preview({
             \   'source': 'fd --type f --hidden --follow --exclude .git --no-ignore . '.expand(<q-args>)
             \ })))
 
-" let g:fzf_colors =
-"             \ { 'fg':      ['fg', '#ffffff'],
-"             \   'bg':      ['bg', '#000106'],
-"             \   'hl':      ['fg', '#00eeff'],
-"             \   'fg+':     ['fg', '#ffffff'],
-"             \   'bg+':     ['bg', '#000106'],
-"             \   'hl+':     ['fg', '#00ff5f'],
-"             \   'info':    ['fg', '#af87ff'],
-"             \   'prompt':  ['fg', '#00eeff'],
-"             \   'pointer': ['fg', '#cd1bfc'],
-"             \   'marker':  ['fg', '#cd1bfc'],
-"             \   'spinner': ['fg', '#cd1bfc'],}
-"
 
 " Terminal buffer options for fzf
 autocmd! FileType fzf
@@ -65,16 +34,14 @@ if has('nvim') || has('gui_running')
   autocmd  FileType fzf set laststatus=0 | autocmd WinLeave <buffer> set laststatus=2
 endif
 
-
-
-
+" AG preview look
 command! -bang -nargs=* Ag
             \ call fzf#vim#ag(<q-args>,
             \                 <bang>0 ? fzf#vim#with_preview('up:60%')
             \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
             \                 <bang>0)
 
-
+" Absolutely no idea what this does
 function! s:plug_help_sink(line)
     let dir = g:plugs[a:line].dir
     for pat in ['doc/*.txt', 'README.md']
