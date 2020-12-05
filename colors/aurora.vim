@@ -89,15 +89,16 @@ let s:gb = {}
 "-------------------------------------------------------------------------------------
 
 " fill it with absolute colors
-let s:gb.dark0_hard  = ['#00010695', 234]     " 29-32-33
-let s:gb.dark0       = ['#00010695', 235]     " 40-40-40
+let s:gb.dark0_hard  = ['#0f101a95', 234]     " 29-32-33
+let s:gb.dark0       = ['#0f101a95', 235]     " 40-40-40
+" let s:gb.dark0_hard  = ['#00010690', 234]     " 29-32-33
+" let s:gb.dark0       = ['#00010690', 235]     " 40-40-40
 let s:gb.dark0_soft  = ['#0c0d10', 236]     " 50-48-47
 let s:gb.dark1       = ['#171a29', 237]     " 60-56-54
 let s:gb.dark2       = ['#3E4452', 239]     " 80-73-69
 let s:gb.dark3       = ['#3E4452', 241]     " 102-92-84
 let s:gb.dark4       = ['#616e88', 243]     " 124-111-100
 let s:gb.dark4_256   = ['#616e88', 243]     " 124-111-100
-
 let s:gb.gray_245    = ['#616e88', 245]     " 146-131-116
 let s:gb.gray_244    = ['#616e88', 244]     " 146-131-116
 
@@ -294,7 +295,8 @@ let s:gb.pink   = s:pink
 
 
 if has('nvim')
-  let g:terminal_color_0 = s:bg0[0]
+  " let g:terminal_color_0 = s:bg0[0]
+  let g:terminal_color_0 = s:gb.dark1[0]
   let g:terminal_color_8 = s:gb.bright_yellow[0]
 
   let g:terminal_color_1 = s:gb.neutral_red[0]
@@ -807,7 +809,7 @@ let g:niji_light_colours = g:rbpt_colorpairs
 " GitGutter: {{{
 
 hi! link GitGutterAdd AuroraRedSign
-hi! link GitGutterChange AuroraAquaSign
+hi! link GitGutterChange AuroraCyanSign
 hi! link GitGutterDelete AuroraPurpleSign
 hi! link GitGutterChangeDelete AuroraPurpleSign
 
