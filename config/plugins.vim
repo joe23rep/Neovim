@@ -30,6 +30,7 @@ Plug 'vim-scripts/CSSMinister'
 Plug 'voldikss/vim-floaterm'
 Plug 'liuchengxu/vim-which-key'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-eunuch'
 Plug 'turbio/bracey.vim'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'  "vim session dependency
