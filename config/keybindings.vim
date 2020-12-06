@@ -28,7 +28,7 @@ nmap cy yyccp
 nmap gy yipgcip}p
 
 " Map cg to comment out the current paragraph without selecting it first
-nmap cg gcip
+nmap xy gcip
 
 " Tab / Shift Tab to switch buffers
 nmap <S-Tab> :bp<CR>
@@ -63,10 +63,6 @@ nmap <C-z> <C-R>
 
 " Ctrl f to search
 nmap <C-f> /
-
-" Remap increasinf values
-" nmap <C-+> <C-a>
-" nmap <C--> <C-x>
 
 
 "---------------------------------------------------------------
@@ -148,7 +144,6 @@ cmap kj <C-c>
 imap jj <esc>
 imap öö <esc>
 imap jk <esc>
-
 
 
 "---------------------------------------------------------------
@@ -309,9 +304,8 @@ map <silent><leader>cb :bd<CR>
 " Load files via shortcuts
 nmap <silent><leader>v :tabedit ~/.config/nvim/init.vim<CR>
 nmap <silent><leader>z :tabedit ~/Dots/.zshrc<CR>
-nmap <silent><leader>tc :tabedit ~/Dots/.tmux.conf<CR>
+nmap <silent><leader>t :tabedit ~/Dots/.tmux.conf<CR>
 nmap <silent><leader>g :tabedit ~/.config/nvim/colors/aurora.vim<CR>
-nmap <silent><leader>t :tabedit ~/Documents/tmux_cheatsheet.txt<CR>
 
 " Map splits
 nmap <silent><leader>vs :vs<CR>
@@ -338,6 +332,9 @@ nmap <leader>sf :source %<CR>
 nmap <silent><leader>rr :FloatermNew ranger <CR>
 " nmap <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <CR>
 
+" Root file interactions
+nmap <silent><leader>sw :SudoWrite<CR>
+nmap <silent><leader>se :SudoEdit<CR>
 
 "---------------------------------------------------------------
 " Abbreviations

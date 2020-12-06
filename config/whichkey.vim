@@ -138,34 +138,15 @@ let g:which_key_map.E = {
 
 " let g:which_key_map.N = {
 let g:which_key_map.o = {
-      \ 'name'  : '+Normal-Mode'      ,
-      \ 'e'     : ['e'                , 'go to end of word']   ,
-      \ 'f'     : ['f'                , 'find char after cursor in line']   ,
-      \ 'qq'    : ['qq'               , 'add letter to open macros']   ,
-      \ 'm'     : ['m'                , 'mark current line and position']   ,
-      \ 'o'     : ['o'                , 'go line below /in Insert mode']   ,
-      \ 'O'     : ['O'                , 'go line above /in Insert mode']   ,
-      \ 'M'     : ['M'                , 'go to middle of screen']   ,
-      \ 'S'     : ['S'                , 'deletes line and /in Insert mode']   ,
-      \ 'n'     : ['n'                , 'repeat last search']   ,
-      \ 'C'     : ['C'                , 'Change to end of line']   ,
-      \ 'c'     : ['c'                , 'Insert mode/ overrides text']   ,
-      \ 'cc'    : ['cc'               , 'comment current line']   ,
-      \ 'gc'    : ['gc'               , 'comment selected area']   ,
-      \ 'jk'    : ['jk'               , 'esc']   ,
-      \ 'L'     : ['$'                , 'go to end of line']   ,
-      \ 'H'     : ['^'                , 'go to start of line']   ,
-      \ 'J'     : ['}'                , 'jump paragraph down']   ,
-      \ 'K'     : ['{'                , 'jump paragraph up']   ,
-      \ 'U'     : ['<C-R>'            , 'Redo']   ,
-      \ 'Ctrl f': ['/'                , 'search document']   ,
-      \ 'Ctrl o': ['<C-o>'            , 'jumplist forward']   ,
-      \ 'Ctrl i': ['<C-i>'            , 'jumplist backward']   ,
-      \ 'Y'     : ['y$'               , 'copy to end of line']   ,
-      \ '+'     : [':call Toggle'     , 'toggle Boolean values']   ,
-      \ 'Alt i' : ['<Plug>nextvalInc' , 'increase value']   ,
-      \ 'Alt d' : ['<Plug>nextvalDec' , 'decrease value']   ,
-      \ 'gv'    : [':GV!'             , 'open commit browser']   ,
+      \ 'name'  : '+File-Operations'      ,
+      \ 'd'     : [':Delete'                , 'delete current file']   ,
+      \ 'u'     : [':Unlink'                , 'like delete but keeps empty buffer']   ,
+      \ 'm'     : [':Move'                  , 'move current file']   ,
+      \ 'r'     : [':Rename'                , 'rename current file']   ,
+      \ 'ch'    : [':Chmod'                 , 'chmod']   ,
+      \ 'mk'    : [':Mkdir'                 , 'mkdir']   ,
+      \ 'sw'    : [':SudoWrite'             , 'save as root']   ,
+      \ 'se'    : [':SudoEdit'              , 'edit root files']   ,
       \ }
 
 
@@ -396,6 +377,8 @@ nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
 let g:which_key_map.bm = 'show Bookmarks'
 " let g:which_key_map.f = { 'name' : '+file' }
 
+nmap <silent><leader>sw :SudoWrite<CR>
+let g:which_key_map.sw = 'save as root'
 
 "  _____                                  _      _       _
 " |_   _|                                | |    (_)     | |
@@ -478,6 +461,7 @@ let g:which_key_map.s = 'which_key_ignore'
 "
 let g:which_key_map._ = {'name' : 'which_key_ignore'}
 let g:which_key_map._._ = 'which_key_ignore'
+
 
 
 

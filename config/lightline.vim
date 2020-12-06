@@ -63,17 +63,13 @@ let g:lightline.active = {
 
 
 let g:lightline.separator = { 'left': " ", 'right': " " }
+" let g:lightline.separator = { 'left': "", 'right': "" }
 let g:lightline.subseparator = { 'left': " ", 'right': " " }
 let g:lightline.tabline_separator = { 'left': " ", 'right': " " }
+" let g:lightline.subseparator = { 'left': " ", 'right': " " }
 let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
 " let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
 " let g:lightline.subseparator = { 'left': " ", 'right': " " }
-
-" let g:lightline.separator = { 'left': " ", 'right': " " }
-" let g:lightline.subseparator = { 'left': " ", 'right': " " }
-" let g:lightline.tabline_separator = { 'left': " ", 'right': " " }
-" let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
-"
 
 
 " Tabline-------------------------------------------------------------------------
@@ -126,8 +122,8 @@ let g:lightline#bufferline#filename_modifier = ':t'
 
 " Tabline colors
 let s:palette = g:lightline#colorscheme#deus#palette
-let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, ] ]
-" let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, 'bold' ] ]
+let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#414c5f', 252, 66, ] ]
+" let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#414c5f', 252, 66, 'bold' ] ]
 
 unlet s:palette
 
