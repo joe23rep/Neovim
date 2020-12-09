@@ -26,17 +26,17 @@
     "python"
   ],
 
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "~/.vim/plugged/vim-snippets/UltiSnips"
-  ],
-
   "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
 
   "emmet.includeLanguages": {
     "vue-html": "html",
     "javascript": "javascriptreact"
   },
+
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.vim/plugged/vim-snippets/UltiSnips"
+  ],
 
   "coc.source.ultisnips.filetypes": ["html", "css", "javascript", "scss"],
 
