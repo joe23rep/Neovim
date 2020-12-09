@@ -113,5 +113,66 @@
     "]c": "gitNext",
     "<<": "gitStage",
     ">>": "gitUnstage"
+  },
+
+  "explorer.icon.customIcons": {
+    "icons": {
+      "folderClosed": {
+        "code": "",
+        "color": "#41e1ff"
+      },
+      "folderOpened": {
+        "code": "",
+        "color": "#41e1ff"
+      },
+      "src": {
+        "code": "",
+        "color": "#62c1a6"
+      },
+      "json": {
+        "code": "",
+        "color": "#62c1a6"
+      },
+      "build": {
+        "code": "",
+        "color": "#96edd9"
+      },
+      "so": {
+        "code": "",
+        "color": "#ccbbff"
+      },
+      "css": {
+        "code": "",
+        "color": "#8400ff"
+      },
+      "javascript": {
+        "code": "",
+        "color": "#b300ff"
+      },
+      "html": {
+        "code": "",
+        "color": "#9eddff"
+      },
+      "csharp": {
+        "code": "",
+        "color": "#45f3d3"
+      },
+      "npm": {
+        "code": "ﯵ",
+        "color": "#87afd7"
+      },
+      "log": {
+        "code": "",
+        "color": "#b6aef4"
+      },
+      "vim": {
+        "code": "",
+        "color": "#b6aef4"
+      },
+      "cmake": {
+        "code": "煉",
+        "color": "#00afaf"
+      }
+    }
   }
 }
