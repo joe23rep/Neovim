@@ -38,10 +38,10 @@ nmap <Tab>   :bn<CR>
 nmap <CR> o<Esc>
 
 " Map Ctrl S to safe
-nmap <C-s> :w<CR>
+nmap <C-s> :w!<CR>
 
 " Map Ctrl q to safe and quit
-nmap <C-q> :wq<CR>
+nmap <C-q> :wq!<CR>
 
 " Ctrl A to select all
 nmap <C-a> ggVG
