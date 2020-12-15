@@ -784,13 +784,13 @@ endif
 if !exists('g:rbpt_colorpairs')
   let g:rbpt_colorpairs =
     \ [
-      \ ['#81ffff',  '#00eeff'], ['#9eddff', '#00d3d7'],
-      \ ['#ff00f4',  '#b032fe'], ['#51afef', '#2cdaa9']
+      \ ['s:purple',  's:orange'], ['s:blue', 's:aqua'],
+      \ ['s:yellow',  's:red'], ['s:green', 's:magenta']
     \ ]
 endif
 
-let g:rainbow_guifgs =   [ '#2cdaa9', '#b032fe', '#00d3d7', '#00eeff' ]
-let g:rainbow_ctermfgs = [ '#00eeff', '#00ff9f', '#9eddff', '#77ffd7' ]
+let g:rainbow_guifgs =   [ 's:cyan', 's:red', 's:blue', 's:green' ]
+let g:rainbow_ctermfgs = [ 's:orange', 's:magenta', 's:aqua', 's:purple' ]
 
 if !exists('g:rainbow_conf')
    let g:rainbow_conf = {}
