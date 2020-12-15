@@ -393,6 +393,7 @@ let g:which_key_map.sw = 'save as root'
 
 let g:which_key_map.a = 'which_key_ignore'
 let g:which_key_map.ee = 'which_key_ignore'
+let g:which_key_map.se = 'which_key_ignore'
 let g:which_key_map.sd = 'which_key_ignore'
 let g:which_key_map.ws = 'which_key_ignore'
 let g:which_key_map.qq = 'which_key_ignore'
