@@ -36,3 +36,10 @@ let g:terminal_color_16 = '#b3b9b9'
 
 " Floaterm border-color
 hi FloatermBorder guibg=black guifg=#c2c2ff
+
+" Hide status bar while using fzf commands
+if has('nvim') || has('gui_running')
+  autocmd! FileType floaterm
+  autocmd  FileType floaterm set laststatus=0 | autocmd WinLeave <buffer> set laststatus=2
+endif
+
