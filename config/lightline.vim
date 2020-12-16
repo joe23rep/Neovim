@@ -9,9 +9,9 @@
 let g:lightline = {
 \   'colorscheme': 'deus',
 \   'active': {
-\    'left' :[[ 'mode', 'paste' ],
-\             [  'readonly', 'filename', 'modified' ]],
-\    'right':[[ 'percent', 'lineinfo' ], [ 'cocstatus' ]]
+\    'left' :[[ 'mode', 'paste'],
+\             [  'readonly', 'filename' ]],
+\    'right':[[ 'percent', 'lineinfo' ], [ 'cocstatus', 'tagbar' ]]
 \   },
 \   'tabline': {
 \     'left': [['explorer_pad', 'buffers']],
@@ -26,13 +26,13 @@ let g:lightline = {
 \   'component_function': {
 \     'explorer_pad': 'lightline#explorer_pad#left_pad',
 \     'percent': 'LightlinePercent',
-\     'filename': 'LightlineFilename',
 \     'mode': 'LightlineMode',
 \     'gitbranch': 'LightlineGitbranch',
 \     'lineinfo': 'LightlineLineinfo',
 \     'readonly': 'LightlineReadonly',
 \     'modified': 'LightlineModified',
 \     'filetype': 'LightlineFiletype',
+\     'filename': 'LightlineFilename',
 \     'cocstatus': 'LightlineCoc',
 \   },
 \   'component_expand': {
@@ -43,7 +43,7 @@ let g:lightline = {
 \   'component_type': {
 \     'buffers': 'tabsel',
 \     'trailing': 'warning'
-\   }
+\   },
 \}
 
 function! s:trim(maxlen, str) abort
@@ -100,7 +100,6 @@ function! LightlineMode() abort
     let ftmap = {
                 \ 'coc-explorer': 'EXPLORER',
                 \ 'fugitive': 'FUGITIVE',
-                \ '__Tagbar__' : 'Tagbar'
                 \ }
     return get(ftmap, &filetype, lightline#mode())
 endfunction
@@ -113,7 +112,7 @@ function! LightlineGitbranch() abort
     if exists('*fugitive#head')
         let maxlen = 20
         let branch = fugitive#head()
-        return branch !=# '' ? '  '. s:trim(maxlen, branch) : ''
+        return branch !=# '' ? ' '. s:trim(maxlen, branch) : ''
     endif
     return fugitive#head()
 endfunction
@@ -173,14 +172,12 @@ function! FileTypeWithIcon() abort
   let modified = &modified ? '   ' : ''
   return WebDevIconsGetFileTypeSymbol() . ' '
 endfunction
-" return WebDevIconsGetFileTypeSymbol() . ' '  . filetype_with_icon  . modified
-
 
 " Define lightline look-----------------------------------------------------------
-"
+
  let g:lightline.active = {
          \ 'left': [ ['mode'], [ 'filetype_with_icon' ] ],
-         \ 'right': [ ['lineinfo'],[ 'percent' ], [ 'unix_logo' ] ],
+         \ 'right': [ ['lineinfo'],[ 'percent' ], [ 'unix_logo', 'tagbar' ] ],
          \ }
 
 
@@ -205,7 +202,7 @@ let g:lightline.tabline = {
 
 let g:lightline.tab = {
         \ 'active': ['filename_with_icon'],
-        \ 'inactive': ['filename_with_icon']
+        \ 'inactive': ['filetype_with_icon']
         \ }
 
 
@@ -248,5 +245,6 @@ let s:palette = g:lightline#colorscheme#deus#palette
 let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#414c5f', 252, 66, ] ]
 
 unlet s:palette
+
 
 
