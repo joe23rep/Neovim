@@ -95,8 +95,8 @@ let s:gb.dark0       = ['#0f101a95', 235]     " 40-40-40
 " let s:gb.dark0       = ['#00010690', 235]     " 40-40-40
 let s:gb.dark0_soft  = ['#0c0d10', 236]     " 50-48-47
 let s:gb.dark1       = ['#171a29', 237]     " 60-56-54
-let s:gb.dark2       = ['#3E4452', 239]     " 80-73-69
-let s:gb.dark3       = ['#3E4452', 241]     " 102-92-84
+let s:gb.dark2       = ['#232a3d', 239]     " 80-73-69
+let s:gb.dark3       = ['#232a3d', 241]     " 102-92-84
 let s:gb.dark4       = ['#616e88', 243]     " 124-111-100
 let s:gb.dark4_256   = ['#616e88', 243]     " 124-111-100
 let s:gb.gray_245    = ['#616e88', 245]     " 146-131-116
@@ -684,11 +684,11 @@ if version >= 700
   " Popup menu: normal item
   call s:HL('Pmenu', s:fg1, s:bg2)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:bg2, s:cyan, s:bold)
+  call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
   " Popup menu: scrollbar
-  call s:HL('PmenuSbar', s:none, s:bg2)
+  call s:HL('PmenuSbar', s:none, s:bg1)
   " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', s:none, s:bg2)
+  call s:HL('PmenuThumb', s:none, s:bg1)
 endif
 
 " }}}
