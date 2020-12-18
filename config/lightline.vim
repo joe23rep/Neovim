@@ -1,4 +1,3 @@
-" Lightline -------------------------------------------------------------------------------------
 "       _       _     _   _ _
 "| |   (_) __ _| |__ | |_| (_)_ __   ___
 "| |   | |/ _` | '_ \| __| | | '_ \ / _ \
@@ -6,45 +5,95 @@
 "|_____|_|\__, |_| |_|\__|_|_|_| |_|\___|
 "         |___/
 
+" Define Lightline look--------------------------------------------------------------
+
 let g:lightline = {
 \   'colorscheme': 'deus',
-\   'active': {
-\    'left' :[[ 'mode', 'paste'],
-\             [  'readonly', 'filename' ]],
-\    'right':[[ 'percent', 'lineinfo' ], [ 'cocstatus', 'tagbar' ]]
+\   'active' : {
+\     'left' : [['mode'], [ 'filetype_with_icon' ]],
+\     'right': [[ 'lineinfo'],[ 'percent' ], [ 'unix_logo', 'cocstatus', 'tagbar' ]]
 \   },
 \   'tabline': {
-\     'left': [['explorer_pad', 'buffers']],
-\     'right': [['gitbranch', 'smarttabs']]
+\     'left' : [['vim_logo'], ['buffers']],
+\     'right': [['buffer'], ['gitbranch']]
 \   },
 \   'separator': {
-\     'left': '', 'right': ''
+\     'left'   : " ", 'right': " "
 \   },
 \   'subseparator': {
-\     'left': '', 'right': ''
+\     'left' : "", 'right': ""
+\   },
+\   'tabline_separator': {
+\     'left' : " ", 'right': " "
 \   },
 \   'component_function': {
-\     'explorer_pad': 'lightline#explorer_pad#left_pad',
-\     'percent': 'LightlinePercent',
-\     'mode': 'LightlineMode',
+\     'explorer_pad' : 'lightline#explorer_pad#left_pad',
+\     'percent'  : 'LightlinePercent',
+\     'mode'     : 'LightlineMode',
 \     'gitbranch': 'LightlineGitbranch',
-\     'lineinfo': 'LightlineLineinfo',
-\     'readonly': 'LightlineReadonly',
-\     'modified': 'LightlineModified',
-\     'filetype': 'LightlineFiletype',
-\     'filename': 'LightlineFilename',
+\     'lineinfo' : 'LightlineLineinfo',
+\     'readonly' : 'LightlineReadonly',
+\     'modified' : 'LightlineModified',
+\     'filetype' : 'LightlineFiletype',
+\     'filename' : 'LightlineFilename',
 \     'cocstatus': 'LightlineCoc',
 \   },
 \   'component_expand': {
-\     'buffers': 'lightline#bufferline#buffers',
+\     'buffers'  : 'lightline#bufferline#buffers',
 \     'smarttabs': 'SmartTabsIndicator',
-\     'trailing': 'lightline#trailing_whitespace#component'
+\     'trailing' : 'lightline#trailing_whitespace#component',
 \   },
 \   'component_type': {
-\     'buffers': 'tabsel',
-\     'trailing': 'warning'
+\     'buffers'  : 'tabsel',
+\     'trailing' : 'warning',
+\   },
+\   'component':{
+\     'filename_with_icon': '%{FileNameWithIcon()}',
+\     'filetype_with_icon': '%{FileTypeWithIcon()}',
+\     'vim_logo' : "\ue7c5 ",
+\     'unix_logo': "  ",
+\     'filename_with_parent': '%t',
+\     'buffer'   : 'buffers %n',
+\   },
+\   'tab_component_function':{
+\     'artify_filename': 'lightline_tab_filename',
+\     'filename' : 'lightline#tab#filename',
+\     'modified' : 'lightline#tab#modified',
+\     'readonly' : 'lightline#tab#readonly',
+\     'tabnum'   : 'lightline#tab#tabnum',
+\     'filename_with_parent': 'FileNameWithParent'
+\   },
+\   'tab':{
+\     'active'   : ['filename_with_icon'],
+\     'inactive' : ['filetype_with_icon']
 \   },
 \}
+
+" Tabline Settings-------------------------------------------------------------------
+
+" Tabline Icons
+let g:lightline#bufferline#enable_devicons = 0
+let g:lightline#bufferline#filename_modifier = ':t'
+
+" Tabline colors
+let s:palette = g:lightline#colorscheme#deus#palette
+let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#414c5f', 252, 66, ] ]
+
+unlet s:palette
+
+" Custom Functions-------------------------------------------------------------------
+
+function! FileNameWithIcon() abort
+  let filename_with_icon = expand('%:t') !=# '' ? expand('%:t') : 'Txt'
+  let modified = &modified ? '  ' : ''
+  return WebDevIconsGetFileTypeSymbol() . ' ' . filename_with_icon . modified
+endfunction
+
+function! FileTypeWithIcon() abort
+  let filetype_with_icon = expand(&ft) !=# '' ? expand(&ft) : 'Txt'
+  let modified = &modified ? '   ' : ''
+  return WebDevIconsGetFileTypeSymbol() . ' '
+endfunction
 
 function! s:trim(maxlen, str) abort
     let trimed = len(a:str) > a:maxlen ? a:str[0:a:maxlen] . '..' : a:str
@@ -132,7 +181,6 @@ function! SmartTabsIndicator() abort
     return tabpagenr('$') > 1 ? ('TABS ' . tabs . '/' . tab_total) : ''
 endfunction
 
-" autoreload
 command! LightlineReload call LightlineReload()
 
 function! LightlineReload() abort
@@ -142,8 +190,6 @@ function! LightlineReload() abort
 endfunction
 
 let g:lightline#trailing_whitespace#indicator = ''
-" }}}
-
 
 " Lightline shows the mode -> get rid of vim's default
 set noshowmode
@@ -156,95 +202,4 @@ let g:lightline#bufferline#clickable=1
 
 let g:lightline.component_raw = {'buffers': 1}
 "
-" " Custom Functions-----------------------------------------------------------------
-
-" Show icon and change the /+ for unsaved changes to be within the same block with diff icon
-function! FileNameWithIcon() abort
-  let filename_with_icon = expand('%:t') !=# '' ? expand('%:t') : 'Txt'
-  let modified = &modified ? '  ' : ''
-  return WebDevIconsGetFileTypeSymbol() . ' ' . filename_with_icon . modified
-endfunction
-
-
-" Show filetype with icon and display an icon for unsaved changes
-function! FileTypeWithIcon() abort
-  let filetype_with_icon = expand(&ft) !=# '' ? expand(&ft) : 'Txt'
-  let modified = &modified ? '   ' : ''
-  return WebDevIconsGetFileTypeSymbol() . ' '
-endfunction
-
-" Define lightline look-----------------------------------------------------------
-
- let g:lightline.active = {
-         \ 'left': [ ['mode'], [ 'filetype_with_icon' ] ],
-         \ 'right': [ ['lineinfo'],[ 'percent' ], [ 'unix_logo', 'tagbar' ] ],
-         \ }
-
-
-
-let g:lightline.separator = { 'left': " ", 'right': " " }
-" let g:lightline.separator = { 'left': "", 'right': "" }
-let g:lightline.subseparator = { 'left': " ", 'right': " " }
-let g:lightline.tabline_separator = { 'left': " ", 'right': " " }
-" let g:lightline.subseparator = { 'left': " ", 'right': " " }
-let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
-" let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
-" let g:lightline.subseparator = { 'left': " ", 'right': " " }
-
-
-" Tabline-------------------------------------------------------------------------
-
-let g:lightline.tabline = {
-        \ 'left': [ [ 'vim_logo' ], [ 'buffers' ] ],
-        \ 'right': [ [  'gitbranch'] , ['buffer']]
-        \ }
-
-
-let g:lightline.tab = {
-        \ 'active': ['filename_with_icon'],
-        \ 'inactive': ['filetype_with_icon']
-        \ }
-
-
-" Custom lightline components-----------------------------------------------------
-
-let g:lightline.tab_component = {}
-let g:lightline.tab_component_function = {
-        \ 'artify_filename': 'lightline_tab_filename',
-        \ 'filename': 'lightline#tab#filename',
-        \ 'modified': 'lightline#tab#modified',
-        \ 'readonly': 'lightline#tab#readonly',
-        \ 'tabnum': 'lightline#tab#tabnum',
-        \ 'filename_with_parent': 'FileNameWithParent'
-        \ }
-
-
-let g:lightline.component = {
-        \ 'filename_with_icon': '%{FileNameWithIcon()}',
-        \ 'filetype_with_icon': '%{FileTypeWithIcon()}',
-        \ 'vim_logo': "\ue7c5 ",
-        \ 'unix_logo': "  ",
-        \ 'filename_with_parent': '%t',
-        \ 'buffer': 'buffers %n',
-        \}
-
-
-
-" Tabline Settings-------------------------------------------------------------------
-
-" Enable bufferline
-let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type   = {'buffers': 'tabsel'}
-
-" Tabline Icons
-let g:lightline#bufferline#enable_devicons = 0
-let g:lightline#bufferline#filename_modifier = ':t'
-
-" Tabline colors
-let s:palette = g:lightline#colorscheme#deus#palette
-let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#414c5f', 252, 66, ] ]
-
-unlet s:palette
-
-
 
