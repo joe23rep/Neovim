@@ -5,13 +5,19 @@
 "|_____|_|\__, |_| |_|\__|_|_|_| |_|\___|
 "         |___/
 
+" Lightline shows the mode -> get rid of vim's default
+set noshowmode
+
+" Show second tabline on top
+set showtabline=2
+
 " Define Lightline look--------------------------------------------------------------
 
 let g:lightline = {
 \   'colorscheme': 'deus',
 \   'active' : {
 \     'left' : [['mode'], [ 'filetype_with_icon' ]],
-\     'right': [[ 'lineinfo'],[ 'percent' ], [ 'unix_logo', 'cocstatus', 'tagbar' ]]
+\     'right': [[ 'lineinfo'],[ 'percent' ], [ 'unix_logo', 'tagbar' ]]
 \   },
 \   'tabline': {
 \     'left' : [['vim_logo'], ['buffers']],
@@ -20,11 +26,11 @@ let g:lightline = {
 \   'separator': {
 \     'left'   : " ", 'right': " "
 \   },
-\   'subseparator': {
-\     'left' : "", 'right': ""
-\   },
 \   'tabline_separator': {
 \     'left' : " ", 'right': " "
+\   },
+\   'subseparator': {
+\     'left' : "", 'right': ""
 \   },
 \   'component_function': {
 \     'explorer_pad' : 'lightline#explorer_pad#left_pad',
@@ -55,6 +61,9 @@ let g:lightline = {
 \     'filename_with_parent': '%t',
 \     'buffer'   : 'buffers %n',
 \   },
+\   'component_raw':{
+\     'buffers': 1,
+\   },
 \   'tab_component_function':{
 \     'artify_filename': 'lightline_tab_filename',
 \     'filename' : 'lightline#tab#filename',
@@ -69,6 +78,7 @@ let g:lightline = {
 \   },
 \}
 
+
 " Tabline Settings-------------------------------------------------------------------
 
 " Tabline Icons
@@ -80,6 +90,15 @@ let s:palette = g:lightline#colorscheme#deus#palette
 let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#414c5f', 252, 66, ] ]
 
 unlet s:palette
+
+" Misc-------------------------------------------------------------------------------
+
+" Make bufferline clickable
+let g:lightline#bufferline#clickable=1
+
+" Set whitespace indicator
+let g:lightline#trailing_whitespace#indicator = ''
+
 
 " Custom Functions-------------------------------------------------------------------
 
@@ -189,17 +208,4 @@ function! LightlineReload() abort
     call lightline#update()
 endfunction
 
-let g:lightline#trailing_whitespace#indicator = ''
-
-" Lightline shows the mode -> get rid of vim's default
-set noshowmode
-
-" Show second tabline on top
-set showtabline=2
-
-" " Make bufferline clickable
-let g:lightline#bufferline#clickable=1
-
-let g:lightline.component_raw = {'buffers': 1}
-"
 
