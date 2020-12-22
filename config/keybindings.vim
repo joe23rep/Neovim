@@ -277,12 +277,16 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+
+" FZF Preview-------------------------------------------------------
+
 " Coc Fzf Preview
 nmap <silent> <leader>ch       :CocCommand fzf-preview.Changes<CR>
 nmap <silent> <leader>j        :CocCommand fzf-preview.Jumps<CR>
 nmap <silent> <leader>ga       :CocCommand fzf-preview.GitActions<CR>
 nmap <silent> <leader>gs       :CocCommand fzf-preview.GitStatus<CR>
 nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
+nmap <silent> <Leader>of       :CocCommand fzf-preview.OldFiles<CR>
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
