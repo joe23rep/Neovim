@@ -183,9 +183,15 @@ let g:fzf_preview_use_dev_icons = 1
 " devicons character width
 let g:fzf_preview_dev_icon_prefix_string_length = 3
 
-" Devicons can make fzf-preview slow when the number of results is high
-" By default icons are disable when number of results is higher that 5000
-let g:fzf_preview_dev_icons_limit = 5000
+
+let g:fzf_preview_disable_mru = 0
+let g:fzf_preview_command = 'bat --color=always --plain {-1}'
+let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap:70%' }
+let g:fzf_preview_git_status_preview_command =
+	\ "[[ $(git diff --cached -- {-1}) != \"\" ]] && git diff --cached --color=always -- {-1} | delta || " .
+	\ "[[ $(git diff -- {-1}) != \"\" ]] && git diff --color=always -- {-1} | delta || " .
+	\ g:fzf_preview_command
+
 
 
 " Vim Bookmarks-------------------------------------------------------------------------------
