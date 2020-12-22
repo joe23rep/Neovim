@@ -118,15 +118,15 @@
   "explorer.icon.customIcons": {
     "icons": {
       "folderClosed": {
-        "code": "",
+        "code": "",
         "color": "#41e1ff"
       },
       "folderOpened": {
-        "code": "",
+        "code": "",
         "color": "#41e1ff"
       },
       "src": {
-        "code": "",
+        "code": "",
         "color": "#62c1a6"
       },
       "json": {
