@@ -39,6 +39,55 @@ let g:tagbar_type_css = {
             \ ]
             \ }
 
+" Enable Javascript
+let g:tagbar_type_javascript = {
+            \ 'ctagstype': 'javascript',
+            \ 'kinds': [
+            \ 'A:arrays',
+            \ 'P:properties',
+            \ 'T:tags',
+            \ 'O:objects',
+            \ 'G:generator functions',
+            \ 'F:functions',
+            \ 'C:constructors/classes',
+            \ 'M:methods',
+            \ 'V:variables',
+            \ 'I:imports',
+            \ 'E:exports',
+            \ 'S:styled components'
+            \ ]}
+
+" Enable JSON
+let g:tagbar_type_json = {
+            \ 'ctagstype' : 'json',
+            \ 'kinds' : [
+              \ 'o:objects',
+              \ 'a:arrays',
+              \ 'n:numbers',
+              \ 's:strings',
+              \ 'b:booleans',
+              \ 'z:nulls'
+            \ ],
+            \'sro' : '.',
+            \ 'scope2kind': {
+            \ 'object': 'o',
+              \ 'array': 'a',
+              \ 'number': 'n',
+              \ 'string': 's',
+              \ 'boolean': 'b',
+              \ 'null': 'z'
+            \ },
+            \ 'kind2scope': {
+            \ 'o': 'object',
+              \ 'a': 'array',
+              \ 'n': 'number',
+              \ 's': 'string',
+              \ 'b': 'boolean',
+              \ 'z': 'null'
+            \ },
+            \ 'sort' : 0
+            \ }
+
 " Set width
 let g:tagbar_width = 30
 
@@ -46,8 +95,8 @@ let g:tagbar_width = 30
 let g:tagbar_singleclick = 1
 
 " Automatically open and close tagbar based on filetype
-autocmd BufWinEnter *.css,*.html,*.scss :TagbarOpen
-autocmd BufWinLeave *.css,*.html,*.scss :TagbarClose
+autocmd BufWinEnter *.css,*.html,*.scss,*.json :TagbarOpen
+autocmd BufWinLeave *.css,*.html,*.scss,*.json :TagbarClose
 
 
 " Gitgutter----------------------------------------------------------------------------------
@@ -141,6 +190,7 @@ let g:fzf_preview_dev_icons_limit = 5000
 
 " Vim Bookmarks-------------------------------------------------------------------------------
 
-let g:bookmark_sign = '♣'
+" let g:bookmark_sign = ''
+let g:bookmark_sign = ''
 let g:bookmark_highlight_lines = 0
 let g:bookmark_annotation_sign = '✑'

@@ -237,12 +237,14 @@ nmap <silent><leader>ths :ToHSLAAll<CR>
 " Floaterm--------------------------------------------------------
 
 nmap <silent><leader>lg :FloatermNew  cd ~/Dots && lazygit<CR>
-" nmap <silent><leader>rr :FloatermNew ranger <CR>
+" nmap <silsnt><leader>rr :FloatermNew ranger <CR>
 nmap <silent><leader>bo :FloatermNew broot <CR>
 " nmap <silent><leader>rr:FloatermNew --height=0.6 --width=0.4 --wintype=floating --name=floaterm1  --autoclose=2 ranger --cmd="cd ~"
 nmap <silent><leader>rr:FloatermNew --height=0.6 --width=0.4 --wintype=floating --name=floaterm1  --autoclose=2 ranger
 
+" Open floaterm in cwd --> needs map
 map <F1> :FloatermNew! cd %:p:h<CR>
+
 
 " Coc Mappings----------------------------------------------------
 

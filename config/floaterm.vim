@@ -43,3 +43,4 @@ if has('nvim') || has('gui_running')
   autocmd  FileType floaterm set laststatus=0 | autocmd WinLeave <buffer> set laststatus=2
 endif
 
+

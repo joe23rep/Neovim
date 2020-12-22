@@ -27,8 +27,6 @@ source ~/.config/nvim/config/plugconfig.vim
 source ~/.config/nvim/config/startify.vim
 source ~/.config/nvim/config/keybindings.vim
 
-" Colorzier and treesitter
+" Lua specific configurations
 luafile ~/.config/nvim/lua/treesitter.lua
 luafile ~/.config/nvim/lua/plug-colorizer.lua
-
-

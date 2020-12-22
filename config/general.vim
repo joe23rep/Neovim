@@ -192,6 +192,9 @@ let maplocalleader = ','
 " :h g:incsearch#auto_nohlsearch
 let g:incsearch#auto_nohlsearch = 1
 
+" F1 should now be remapable
+set <F1>=<C-v><F1>
+
 " Open help pages in fullwindow
 command! -nargs=1 -complete=help H help <args> | silent only
 
