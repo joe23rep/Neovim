@@ -20,7 +20,7 @@ let g:lightline = {
 \     'right': [[ 'lineinfo'],[ 'percent' ]]
 \   },
 \   'tabline': {
-\     'left' : [['filetype_with_icon'], ['buffers', 'readonly']],
+\     'left' : [['filetype_with_icon'], ['buffers']],
 \     'right': [['buffer'], ['fileencoding']]
 \   },
 \   'separator': {
@@ -42,6 +42,7 @@ let g:lightline = {
 \     'lineinfo' : 'LightlineLineinfo',
 \     'readonly' : 'LightlineReadonly',
 \     'cocstatus': 'LightlineCoc',
+\     'percent'  : 'LightlinePercent',
 \   },
 \   'component_expand': {
 \     'buffers'  : 'lightline#bufferline#buffers',
@@ -62,15 +63,8 @@ let g:lightline = {
 \     'buffers': 1,
 \   },
 \   'tab_component_function':{
-\     'artify_filename': 'lightline_tab_filename',
 \     'filename' : 'lightline#tab#filename',
 \     'readonly' : 'lightline#tab#readonly',
-\     'tabnum'   : 'lightline#tab#tabnum',
-\     'filename_with_parent': 'FileNameWithParent'
-\   },
-\   'tab':{
-\     'active'   : ['filename_with_icon'],
-\     'inactive' : ['filetype_with_icon']
 \   },
 \}
 
@@ -111,7 +105,6 @@ function! FileNameWithIcon() abort
      endif
 
   let filename_with_icon = expand('%:t') !=# '' ? expand('%:t') : 'Txt'
-  let modified = &modified ? ' ' : ''
 
   return WebDevIconsGetFileTypeSymbol() . ' ' . filename_with_icon . modified
 endfunction
@@ -121,9 +114,7 @@ function! FileTypeWithIcon() abort
     if winwidth(0) < 86
          return ''
      endif
-
   let filetype_with_icon = expand(&ft) !=# '' ? expand(&ft) : 'Txt'
-  " let modified = &modified ? '   ' : ''
 
   return WebDevIconsGetFileTypeSymbol() . ' '
 endfunction
@@ -133,7 +124,6 @@ function! s:trim(maxlen, str) abort
     if winwidth(0) < 60
         return ''
     endif
-
     let trimed = len(a:str) > a:maxlen ? a:str[0:a:maxlen] . '..' : a:str
     return trimed
 endfunction
@@ -151,7 +141,6 @@ function! LightlineLineinfo() abort
      if winwidth(0) < 86
          return ''
      endif
-
           return printf("%3d:%-2d", line('.'), col('.'))
 endfunction
 
@@ -160,7 +149,6 @@ function! LightlineMode() abort
     if winwidth(0) < 50
         return ''
     endif
-
     let ftmap = {
                 \ 'coc-explorer': '',
                 \ 'fugitive': 'FUGITIVE',
@@ -184,13 +172,6 @@ function! LightlineGitbranch() abort
 endfunction
 
 
-function! SmartTabsIndicator() abort
-    let tabs = lightline#tab#tabnum(tabpagenr())
-    let tab_total = tabpagenr('$')
-    return tabpagenr('$') > 1 ? ('TABS ' . tabs . '/' . tab_total) : ''
-endfunction
-
-
 command! LightlineReload call LightlineReload()
 
 
@@ -200,11 +181,11 @@ function! LightlineReload() abort
     call lightline#update()
 endfunction
 
+
 function! LightlinePercent() abort
     if winwidth(0) < 60
         return ''
     endif
-
     let l:percent = line('.') * 100 / line('$') . '%'
     return printf('%-4s', l:percent)
 endfunction
