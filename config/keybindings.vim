@@ -345,6 +345,9 @@ nmap <silent><leader>rr :FloatermNew ranger <CR>
 nmap <silent><leader>sw :SudoWrite<CR>
 nmap <silent><leader>se :SudoEdit<CR>
 
+" Toggle colors
+nmap <silent><leader>tc :ColorizerToggle<CR>
+
 "---------------------------------------------------------------
 " Abbreviations
 "---------------------------------------------------------------
