@@ -45,7 +45,6 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'sheerun/vim-polyglot'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 " Plug 'mattn/emmet-vim'
 " Plug 'roxma/vim-paste-easy'
 " Plug 'junegunn/vim-easy-align'
@@ -63,6 +62,5 @@ call plug#end()
 " :PlugUpgrade		- upgrades vim-plug
 " :PlugClean		- confirms removal of unused plugins; append `!` to auto-approve removal
 "
-
 
 
