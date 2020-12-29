@@ -122,8 +122,8 @@ let g:vimwiki_list = [{'path': '~/.config/nvim/vimwiki/',
 let g:Hexokinase_highlighters = ['virtual']
 
 " Set Type to display colors
-let g:Hexokinase_optInPatterns = 'colour_names'
 " let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+let g:Hexokinase_optInPatterns = 'colour_names'
 
 
 " Tmux --------------------------------------------------------------------------------------
@@ -151,7 +151,7 @@ let g:session_default_name = 'foo'
 let g:session_default_overwrite = 'true'
 
 " Autosave sessions without prompt
-let g:session_autosave = 'yes'
+let g:session_autosave = 'no'
 
 
 " Vim Alias-----------------------------------------------------------------------------------
