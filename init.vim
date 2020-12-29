@@ -15,6 +15,7 @@
 " Theme
 colorscheme aurora
 
+
 " Source config files
 source ~/.config/nvim/config/plugins.vim
 source ~/.config/nvim/config/general.vim
