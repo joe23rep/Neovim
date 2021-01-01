@@ -26,7 +26,6 @@ source ~/.config/nvim/config/lightline.vim
 source ~/.config/nvim/config/fzf.vim
 source ~/.config/nvim/config/floaterm.vim
 source ~/.config/nvim/config/plugconfig.vim
-source ~/.config/nvim/config/startify.vim
 source ~/.config/nvim/config/keybindings.vim
 
 " Lua specific configurations
