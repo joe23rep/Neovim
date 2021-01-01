@@ -246,6 +246,11 @@ nmap <silent><leader>rr:FloatermNew --height=0.6 --width=0.4 --wintype=floating 
 map <F1> :FloatermNew! cd %:p:h<CR>
 
 
+
+" Undotree--------------------------------------------------------
+
+nmap <F5> :UndotreeToggle<CR>
+
 " Coc Mappings----------------------------------------------------
 
 " Explorer
