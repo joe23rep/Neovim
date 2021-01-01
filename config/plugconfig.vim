@@ -118,12 +118,12 @@ let g:vimwiki_list = [{'path': '~/.config/nvim/vimwiki/',
 " Hexokinase---------------------------------------------------------------------------------
 
 " Set Color Highlight Style
-" let g:Hexokinase_highlighters = ['backgroundfull']
-let g:Hexokinase_highlighters = ['virtual']
+let g:Hexokinase_highlighters = ['backgroundfull']
+" let g:Hexokinase_highlighters = ['virtual']
 
 " Set Type to display colors
-" let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
-let g:Hexokinase_optInPatterns = 'colour_names'
+let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+" let g:Hexokinase_optInPatterns = 'colour_names'
 
 
 " Tmux --------------------------------------------------------------------------------------
@@ -169,7 +169,7 @@ endif
 
 " Indentlines special coc settings------------------------------------------------------------
 
-let g:indentLine_fileTypeExclude = ['coc-explorer']
+let g:indentLine_fileTypeExclude = ['coc-explorer', 'dashboard']
 
 
 " Fzf Preview---------------------------------------------------------------------------------
