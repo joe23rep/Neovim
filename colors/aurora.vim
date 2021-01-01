@@ -2,9 +2,9 @@
 " -----------------------------------------------------------------------------
 " File: aurora.vim
 " Description: Retro groove color scheme for Vim
-" Author: morhetz <morhetz@gmail.com>
-" Source: https://github.com/morhetz/aurora
-" Last Modified: 12 Aug 2017
+" Author: joe <joe23@gmail.com>
+" Source: https://github.com/joe23rep/aurora
+" Last Modified: 31.12.2020
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -89,8 +89,8 @@ let s:gb = {}
 "-------------------------------------------------------------------------------------
 
 " fill it with absolute colors
-let s:gb.dark0_hard  = ['#00010690', 234]     " 29-32-33
-let s:gb.dark0       = ['#00010690', 234]     " 29-32-33
+let s:gb.dark0_hard  = ['#00010694', 234]     " 29-32-33
+let s:gb.dark0       = ['#00010694', 234]     " 29-32-33
 let s:gb.dark0_soft  = ['#0c0d10', 236]     " 50-48-47
 let s:gb.dark1       = ['#171a29', 237]     " 60-56-54
 let s:gb.dark2       = ['#232a3d', 239]     " 80-73-69
@@ -874,6 +874,13 @@ hi! link StartifyHeader AuroraYellow
 hi! link StartifyFooter AuroraBg4
 
 " }}}
+" Dashboard:{{{
+
+hi! link DashboardHeader  AuroraYellow
+hi! link DashboardCenter AuroraOrange
+hi! link DashboardShortcut AuroraGreen
+hi! link DashboardFooter AuroraMagenta
+" }}}
 " Vimshell: {{{
 
 let g:vimshell_escape_colors = [
@@ -1538,6 +1545,7 @@ highlight Boolean gui=italic
 
 highlight link markdownItalic Italic
 highlight link markdownBold Bold
+
 
 
 
