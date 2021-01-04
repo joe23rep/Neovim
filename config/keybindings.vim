@@ -249,7 +249,7 @@ map <F1> :FloatermNew! cd %:p:h<CR>
 
 " Undotree--------------------------------------------------------
 
-nmap <F5> :UndotreeToggle<CR>
+nmap <silent><leader>u :UndotreeToggle<CR>
 
 " Coc Mappings----------------------------------------------------
 
