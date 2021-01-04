@@ -353,16 +353,11 @@ nnoremap <silent> <leader>sf :source %<CR>
 
 nnoremap <silent> <leader>ls :Bracey<CR>
 
-
 nnoremap <silent>gv :GV!<CR>
 let g:which_key_map.gv = 'show Commits'
 
-nnoremap cy yyccp
-let g:which_key_map.cy = 'yank/comment/paste Line'
-
-" Map gy to copy, comment out and paste the current paragraph
-nnoremap gy v$Jyv$JgcJp
-let g:which_key_map.gy = 'yank/comment/paste Block'
+nmap <silent><leader>u :UndotreeToggle<CR>
+let g:which_key_map.u = 'toggle Undotree'
 
 nmap tt :TagbarToggle<CR>
 let g:which_key_map.tt = 'toggle Tagbar'
@@ -392,6 +387,8 @@ let g:which_key_map.sw = 'save as root'
 " Ignore List
 
 let g:which_key_map.a = 'which_key_ignore'
+let g:which_key_map.cy = 'which_key_ignore'
+let g:which_key_map.gy = 'which_key_ignore'
 let g:which_key_map.ee = 'which_key_ignore'
 let g:which_key_map.se = 'which_key_ignore'
 let g:which_key_map.sd = 'which_key_ignore'
