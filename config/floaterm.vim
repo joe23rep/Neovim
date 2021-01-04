@@ -2,7 +2,6 @@ let g:floaterm_keymap_toggle = '<F1>'
 let g:floaterm_keymap_kill   = '<F2>'
 let g:floaterm_keymap_next   = '<F3>'
 let g:floaterm_keymap_prev   = '<F4>'
-let g:floaterm_keymap_new    = '<F5>'
 
 " Floaterm
 let g:floaterm_gitcommit='floaterm'
