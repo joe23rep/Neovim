@@ -346,6 +346,15 @@ nmap <silent><leader>se :SudoEdit<CR>
 " Toggle colors
 nmap <silent><leader>tc :ColorizerToggle<CR>
 
+
+"---------------------------------------------------------------
+" Mouse Mappings
+"---------------------------------------------------------------
+
+nmap <RightMouse> cc
+nmap <2-RightMouse> yyccp
+
+
 "---------------------------------------------------------------
 " Abbreviations
 "---------------------------------------------------------------
