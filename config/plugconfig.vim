@@ -199,3 +199,12 @@ let g:fzf_preview_git_status_preview_command =
 let g:bookmark_sign = ''
 let g:bookmark_highlight_lines = 0
 let g:bookmark_annotation_sign = '✑'
+
+
+
+" Undotree------------------------------------------------------------------------------------
+
+" Change layout
+if !exists('g:undotree_WindowLayout')
+    let g:undotree_WindowLayout = 2
+endif
