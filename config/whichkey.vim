@@ -31,26 +31,11 @@ let g:which_key_sep = '→'
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
 
-" Change the colors if you want
-" highlight default link WhichKey          Statement
-" highlight default link WhichKeyGroup     Identifier
-" highlight default link WhichKeyDesc      Identifier
-" highlight default link WhichKeySeperator Operator
-
 highlight default link WhichKey          Statement
 highlight default link WhichKeyGroup     Identifier
 highlight default link WhichKeyDesc      Delimeter
 highlight default link WhichKeySeperator Operator
 
-
-" Special  lightpurple
-" Identifier  lightgreyishblue
-" Statement  purple
-" Macro  darkcoldblue
-" Number  green
-" Function  neonblue
-" Delimiter  white
-" Operator   coldlightgreen
 
 " " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
@@ -61,30 +46,29 @@ let g:which_key_map =  {}
 
 
 
-" " ______             __  _        ___  ___                      _
-" " | ___ \           / _|(_)       |  \/  |                     (_)
-" " | |_/ /_ __  ___ | |_  _ __  __ | .  . |  __ _  _ __   _ __   _  _ __    __ _  ___
-" " |  __/| '__|/ _ \|  _|| |\ \/ / | |\/| | / _` || '_ \ | '_ \ | || '_ \  / _` |/ __|
-" " | |   | |  |  __/| |  | | >  <  | |  | || (_| || |_) || |_) || || | | || (_| |\__ \
-" " \_|   |_|   \___||_|  |_|/_/\_\ \_|  |_/ \__,_|| .__/ | .__/ |_||_| |_| \__, ||___/
-" "                                                | |    | |                __/ |
-" "                                                |_|    |_|               |___/
-"
-"
-"
-" Buffer Mappings-------------------------------------------------------
+" ______             __  _        ___  ___                      _
+" | ___ \           / _|(_)       |  \/  |                     (_)
+" | |_/ /_ __  ___ | |_  _ __  __ | .  . |  __ _  _ __   _ __   _  _ __    __ _  ___
+" |  __/| '__|/ _ \|  _|| |\ \/ / | |\/| | / _` || '_ \ | '_ \ | || '_ \  / _` |/ __|
+" | |   | |  |  __/| |  | | >  <  | |  | || (_| || |_) || |_) || || | | || (_| |\__ \
+" \_|   |_|   \___||_|  |_|/_/\_\ \_|  |_/ \__,_|| .__/ | .__/ |_||_| |_| \__, ||___/
+"                                                | |    | |                __/ |
+"                                                |_|    |_|               |___/
 
-let g:which_key_map.B = {
-      \ 'name'  : '+Bookmarks' ,
-      \ 'mm'    : [':BookmarkToggle<CR>'                           , 'set or remove Bookmarks']   ,
-      \ 'mi'    : [':BookmarkAnnotate<CR>'                         , 'add or remove text to Bookmark']   ,
-      \ 'mn'    : [':BookmarkNext<CR>'                             , 'go to next Bookmark']   ,
-      \ 'mp'    : [':BookmarkPrev<CR>'                             , 'go to previous Bookmark']   ,
-      \ 'mc'    : [':BookmarkClear<CR>'                            , 'clear Bookmarks of current buffer']   ,
-      \ 'mx'    : [':BookmarkClearAll<CR>'                         , 'clear all Bookmarks']   ,
-      \ 'ms'    : [':BookmarkSave /file/path'                      , 'save all Bookmarks to a file']   ,
-      \ 'ml'    : [':BookmarkLoad /file/path'                      , 'load Bookmarks from file']   ,
-      \ }
+
+
+" Bookmarks Mappings----------------------------------------------------
+" let g:which_key_map.B = {
+"       \ 'name'  : '+Bookmarks' ,
+"       \ 'mm'    : [':BookmarkToggle<CR>'          , 'set or remove Bookmarks']   ,
+"       \ 'mi'    : [':BookmarkAnnotate<CR>'        , 'add or remove text to Bookmark']   ,
+"       \ 'mn'    : [':BookmarkNext<CR>'            , 'go to next Bookmark']   ,
+"       \ 'mp'    : [':BookmarkPrev<CR>'            , 'go to previous Bookmark']   ,
+"       \ 'mc'    : [':BookmarkClear<CR>'           , 'clear Bookmarks of current buffer']   ,
+"       \ 'mx'    : [':BookmarkClearAll<CR>'        , 'clear all Bookmarks']   ,
+"       \ 'ms'    : [':BookmarkSave /file/path'     , 'save all Bookmarks to a file']   ,
+"       \ 'ml'    : [':BookmarkLoad /file/path'     , 'load Bookmarks from file']   ,
+"       \ }
 
 
 " Explorer Mappings-----------------------------------------------------
@@ -134,7 +118,7 @@ let g:which_key_map.E = {
 "       \ }
 
 
-" Normal Mode Mappings--------------------------------------------------
+" File Mappings---------------------------------------------------------
 
 " let g:which_key_map.N = {
 let g:which_key_map.o = {
@@ -197,17 +181,17 @@ let g:which_key_map.co = {
 
 let g:which_key_map.F = {
       \ 'name': '+FZF' ,
-      \ 'fb'  :  [':Buffers'        , 'show-buffer']   ,
-      \ 'mm'  :  [':History'        , 'show latest copied words']   ,
-      \ 'm'   :  [':Histroy/'       , 'show latest changed files']     ,
-      \ 'C'   :  [':Colors'         , 'choose Vim colorthemes'] ,
-      \ 's'   :  [':Lines'          , 'search file']      ,
-      \ 'sd'  :  [':BLines'         , 'search file']      ,
-      \ 'f'   :  [':FloatermNew fzf', 'open fzf in Terminal']      ,
-      \ 'rg'  :  [':Rg'             , 'search for words in document']      ,
-      \ 'ff'  :  [':Files'          , 'search files in CWD']      ,
-      \ 'bm'  :  [':CocCommand fzf-preview.Bookmarks'          , 'show Bookmarks']      ,
-      \ 'di'  :  [':CocCommand fzf-preview.CocDiagnostics'     , 'show Diagnostics']      ,
+      \ 'fb'  :  [':Buffers'                                  , 'show-buffer']   ,
+      \ 'mm'  :  [':History'                                  , 'show latest copied words']   ,
+      \ 'm'   :  [':Histroy/'                                 , 'show latest changed files']     ,
+      \ 'C'   :  [':Colors'                                   , 'choose Vim colorthemes'] ,
+      \ 's'   :  [':Lines'                                    , 'search file']      ,
+      \ 'sd'  :  [':BLines'                                   , 'search file']      ,
+      \ 'f'   :  [':FloatermNew fzf'                          , 'open fzf in Terminal']      ,
+      \ 'rg'  :  [':Rg'                                       , 'search for words in document']      ,
+      \ 'ff'  :  [':Files'                                    , 'search files in CWD']      ,
+      \ 'bm'  :  [':CocCommand fzf-preview.Bookmarks'         , 'show Bookmarks']      ,
+      \ 'di'  :  [':CocCommand fzf-preview.CocDiagnostics'    , 'show Diagnostics']      ,
       \ }
 
 
@@ -230,7 +214,7 @@ let g:which_key_map.cc = {
 let g:which_key_map.S = {
       \ 'name': '+Sessions/Macros' ,
       \ 'ss'  :  [':SaveSession'     , 'save session']   ,
-      \ 'os'  :  [':OpenSession<cr>'     , 'open session']   ,
+      \ 'os'  :  [':OpenSession<cr>' , 'open session']   ,
       \ 'ds'  :  [':DelteSession'    , 'delete session']   ,
       \ 'st'  :  [':SaveTabSession'  , 'save tabbed session']   ,
       \ 'ot'  :  [':OpenTabSession'  , 'open tabbed session']   ,
@@ -258,16 +242,16 @@ let g:which_key_map.S = {
 
 let g:which_key_map.G = {
       \ 'name'  : '+Git' ,
-      \ 'a'     : [':Git add'        , 'add']   ,
-      \ 'c'     : [':Git commit'     , 'commit']   ,
-      \ 'p'     : [':Git push'       , 'push']     ,
+      \ 'a'     : [':Git add'                                 , 'add']   ,
+      \ 'c'     : [':Git commit'                              , 'commit']   ,
+      \ 'p'     : [':Git push'                                , 'push']     ,
       \ 'ga'    : [':CocCommand fzf-preview.GitActions'       , 'Git Actions']     ,
       \ 'gs'    : [':CocCommand fzf-preview.GitStatus'        , 'Git Status']     ,
-      \ 'd'     : [':Git diff'       , 'diff'] ,
-      \ 'l'     : [':Git log'        , 'show log']      ,
-      \ 'R'     : [':GRemove'        , 'remove commit']      ,
-      \ 'gv'    : [':GV'             , 'open commit browser']      ,
-      \ 'gh'    : [':GV!'            , 'list commits of current file']      ,
+      \ 'd'     : [':Git diff'                                , 'diff'] ,
+      \ 'l'     : [':Git log'                                 , 'show log']      ,
+      \ 'R'     : [':GRemove'                                 , 'remove commit']      ,
+      \ 'gv'    : [':GV'                                      , 'open commit browser']      ,
+      \ 'gh'    : [':GV!'                                     , 'list commits of current file']      ,
       \ }
 
 
@@ -335,23 +319,6 @@ let g:which_key_map.l = {
 
 " Single Mappings
 
-nnoremap <leader>a :AutoSaveToggle<CR>
-
-nnoremap <silent> <leader>vs :vs<CR>
-
-nnoremap <Leader>j :call GotoJump()<CR>
-
-nnoremap <silent> <leader>nn :NERDTreeFind<CR>
-
-nnoremap <leader>r :%s/<C-r><C-w>//g<Left><Left>
-
-nnoremap <silent> <leader>sr :%s//g<left><left>
-
-nnoremap <silent> <leader>c :let @/=""<CR>
-
-nnoremap <silent> <leader>sf :source %<CR>
-
-nnoremap <silent> <leader>ls :Bracey<CR>
 
 nnoremap <silent>gv :GV!<CR>
 let g:which_key_map.gv = 'show Commits'
@@ -370,10 +337,10 @@ let g:which_key_map.j = 'show Jumps'
 
 nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
 let g:which_key_map.bm = 'show Bookmarks'
-" let g:which_key_map.f = { 'name' : '+file' }
 
 nmap <silent><leader>sw :SudoWrite<CR>
 let g:which_key_map.sw = 'save as root'
+
 
 "  _____                                  _      _       _
 " |_   _|                                | |    (_)     | |
@@ -412,7 +379,6 @@ let g:which_key_map.sf = 'which_key_ignore'
 let g:which_key_map.br = 'which_key_ignore'
 let g:which_key_map.ws = 'which_key_ignore'
 let g:which_key_map.bo = 'which_key_ignore'
-" let g:which_key_map.gv = 'which_key_ignore'
 let g:which_key_map.pi = 'which_key_ignore'
 let g:which_key_map.e = 'which_key_ignore'
 let g:which_key_map.gvv = 'which_key_ignore'
@@ -460,6 +426,11 @@ let g:which_key_map.s = 'which_key_ignore'
 let g:which_key_map._ = {'name' : 'which_key_ignore'}
 let g:which_key_map._._ = 'which_key_ignore'
 
+
+" Needed for some dumb reason i dont understand--------------
+nnoremap <leader>r :%s/<C-r><C-w>//g<Left><Left>
+nnoremap <silent> <leader>c :let @/=""<CR>
+" -----------------------------------------------------------
 
 
 
