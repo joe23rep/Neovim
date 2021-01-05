@@ -64,6 +64,10 @@ nmap <C-z> <C-R>
 " Ctrl f to search
 nmap <C-f> /
 
+" Go to top/bottom and enter insert mode
+nmap ggg gga
+nmap GGG GGo
+
 
 "---------------------------------------------------------------
 " Insert Mode
@@ -106,8 +110,8 @@ xmap <silent><C-k> :call Move_up()<CR>
 xmap <silent><C-j> :call Move_down()<CR>
 
 " Better indenting
-vnoremap < <gv
-vnoremap > >gv
+vnoremap > <gv
+vnoremap < >gv
 
 " Map J/K to jump between paragraphs
 vmap J }
@@ -118,11 +122,6 @@ vmap gy v{jV}kyv$}k$gc}P
 
 
 " Copy and Paste -----------------------------------------------
-
-" Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
-nmap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
 
 " Copy and paste to system clipboard (requires gvim installed)
 nmap <C-p> "+P
@@ -201,7 +200,6 @@ nmap <silent><leader>s  :BLines<CR>
 nmap <silent><leader>rg :Rg<CR>
 nmap <silent><leader>f  :Files ~/<CR>
 nmap <silent><leader>ff :Files<CR>
-" nmap <silent><leader>ff :FloatermNew fzf --color=fg:-1,bg:-1,hl:#00eeff,fg+:-1,bg+:-1,hl+:#00ff5f,info:#cd1bfc,prompt:#00eeff,pointer:#00ff5f,marker:#cd1bfc,spinner:#cd1bfc<CR>
 
 
 " GV ------------------------------------------------------------
@@ -237,9 +235,6 @@ nmap <silent><leader>ths :ToHSLAAll<CR>
 " Floaterm--------------------------------------------------------
 
 nmap <silent><leader>lg :FloatermNew  cd ~/Dots && lazygit<CR>
-" nmap <silsnt><leader>rr :FloatermNew ranger <CR>
-nmap <silent><leader>bo :FloatermNew broot <CR>
-" nmap <silent><leader>rr:FloatermNew --height=0.6 --width=0.4 --wintype=floating --name=floaterm1  --autoclose=2 ranger --cmd="cd ~"
 nmap <silent><leader>rr:FloatermNew --height=0.6 --width=0.4 --wintype=floating --name=floaterm1  --autoclose=2 ranger
 
 " Open floaterm in cwd --> needs map
@@ -256,7 +251,6 @@ nmap <silent><leader>u :UndotreeToggle<CR>
 " Explorer
 nmap <silent><leader>e :CocCommand explorer --toggle<CR>
 nmap <silent><leader>ee :CocCommand explorer --preset vim --toggle<CR>
-" nmap <space>e :CocCommand explorer --preset floatingRightside<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -291,7 +285,6 @@ nmap <silent> <leader>j        :CocCommand fzf-preview.Jumps<CR>
 nmap <silent> <leader>ga       :CocCommand fzf-preview.GitActions<CR>
 nmap <silent> <leader>gs       :CocCommand fzf-preview.GitStatus<CR>
 nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
-nmap <silent> <Leader>of       :CocCommand fzf-preview.OldFiles<CR>
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
