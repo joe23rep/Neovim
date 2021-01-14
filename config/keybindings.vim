@@ -362,3 +362,4 @@ nmap <2-RightMouse> yyccp
 " Change help to Help which will open it in fullscreen
 cnoreabbrev help H
 cnoreabbrev h H
+
