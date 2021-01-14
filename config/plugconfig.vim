@@ -208,3 +208,4 @@ let g:bookmark_annotation_sign = '✑'
 if !exists('g:undotree_WindowLayout')
     let g:undotree_WindowLayout = 2
 endif
+
