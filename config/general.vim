@@ -202,9 +202,8 @@ command! -nargs=1 -complete=help H help <args> | silent only
 highlight clear signcolumn
 
 " Add cursorline when entering insert mode
-:autocmd InsertEnter * set cul
-:autocmd InsertLeave * set nocul
-
+au InsertEnter * set cul
+au InsertLeave * set nocul
 
 " Change cursor behaviour when entering insert mode
 let &t_SI.="\e[6 q" "SI = INSERT mode // steady bar
