@@ -97,8 +97,8 @@ imap <C-j> <down>
 imap <C-L> <esc>A
 imap <C-H> <esc>H
 
- " <TAB>: completion.
- imap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Tab completion.
+imap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 "--------------------------------------------------------------
@@ -252,9 +252,6 @@ nmap <silent><leader>u :UndotreeToggle<CR>
 nmap <silent><leader>e :CocCommand explorer --toggle<CR>
 nmap <silent><leader>ee :CocCommand explorer --preset vim --toggle<CR>
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 " Position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
   inoremap <expr> <CR> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -269,12 +266,9 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+let g:coc_snippet_next = '<tab>'
+
+let g:coc_snippet_prev = '<s-tab>'
 
 
 " FZF Preview-------------------------------------------------------
@@ -296,7 +290,7 @@ nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
 "                                              |___/
 
 " Map leader q to quit without saving
-nmap <leader>q :q<CR>
+nmap <leader>q :q!<CR>
 
 " Map leader qq to quit all without saving
 nmap <leader>qq :qall!<CR>
@@ -317,9 +311,6 @@ nmap <silent><leader>g :tabedit ~/.config/nvim/colors/aurora.vim<CR>
 " Map splits
 nmap <silent><leader>vs :vs<CR>
 
-" Map search and replace
-nmap <leader>sr :%s//g<left><left>
-
 " Map search word under cursor and replace it
 nmap <leader>r :%s/<C-r><C-w>//g<Left><Left>
 
@@ -337,14 +328,10 @@ nmap <leader>sf :source %<CR>
 
 " Open Ranger inside Floaterm
 nmap <silent><leader>rr :FloatermNew ranger <CR>
-" nmap <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <CR>
 
 " Root file interactions
 nmap <silent><leader>sw :SudoWrite<CR>
 nmap <silent><leader>se :SudoEdit<CR>
-
-" Toggle colors
-nmap <silent><leader>tc :ColorizerToggle<CR>
 
 
 "---------------------------------------------------------------
