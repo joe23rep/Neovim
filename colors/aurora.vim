@@ -732,13 +732,12 @@ hi! link Sneak Search
 hi! link SneakLabel Search
 
 " }}}
-
 " Vim Bookmarks: {{{
 
 hi! link BookmarkSign AuroraCyan
 hi! link BookmarkAnnotationSign AuroraAqua
-"}}}
 
+"}}}
 " Indent Guides: {{{
 
 if !exists('g:indent_guides_auto_colors')
@@ -756,16 +755,18 @@ if g:indent_guides_auto_colors == 0
 endif
 
 " }}}
-
 " Coc: {{{
 
 hi! link CocErrorSign AuroraYellowSign
 hi! link CocHintSign AuroraAquaSign
 hi! link CocInfoSign AuroraRedSign
 hi! link CocWarningSign AuroraBlueSign
+hi! link CocExplorerGitContentChange AuroraMagenta
+hi! link CocExplorerGitPathChange AuroraRedSign
+
 hi CocExplorerSelectUI guifg=#414347 guibg=#272B34
 " hi! link CocExplorerSelectUI AuroraRed
-"
+
 "}}}
 " IndentLine: {{{
 
