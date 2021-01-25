@@ -15,6 +15,7 @@
     \ 'coc-vimlsp',
     \ 'coc-yank',
     \ 'coc-json',
+    \ 'coc-fzf-preview',
     \ ]
 
 " Smaller Pop Up Window
