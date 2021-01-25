@@ -270,6 +270,15 @@ let g:coc_snippet_next = '<tab>'
 
 let g:coc_snippet_prev = '<s-tab>'
 
+" Determite if in completion, snippet or text mode and set tab accordingly
+function! Tab_Or_Complete()
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+        return "\<C-N>"
+    else
+        return "\<Tab>"
+    endif
+endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 
 " FZF Preview-------------------------------------------------------
 
