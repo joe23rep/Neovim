@@ -209,3 +209,23 @@ if !exists('g:undotree_WindowLayout')
     let g:undotree_WindowLayout = 2
 endif
 
+
+" Firenvim------------------------------------------------------------------------------------
+
+" Sync written text automatically to underlying textinput field
+let g:dont_write = v:false
+function! My_Write(timer) abort
+	let g:dont_write = v:false
+	write
+endfunction
+
+function! Delay_My_Write() abort
+	if g:dont_write
+		return
+	end
+	let g:dont_write = v:true
+	call timer_start(10000, 'My_Write')
+endfunction
+
+au TextChanged * ++nested call Delay_My_Write()
+au TextChangedI * ++nested call Delay_My_Write()
