@@ -50,6 +50,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'adelarsq/vim-matchit'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " Plug 'mattn/emmet-vim'
 " Plug 'roxma/vim-paste-easy'
 " Plug 'junegunn/vim-easy-align'
