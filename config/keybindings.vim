@@ -290,6 +290,12 @@ nmap <silent> <leader>gs       :CocCommand fzf-preview.GitStatus<CR>
 nmap <silent> <leader>bm       :CocCommand fzf-preview.Bookmarks<CR>
 
 
+" Firenvim----------------------------------------------------------
+
+" Switch focus back to site
+nmap <Esc><Esc> :call firenvim#focus_page()<CR>
+
+
 " Leader Key Mappings ----------------------------------------------------------------------
 "   _                   _             _  __
 "  | |    ___  __ _  __| | ___ _ __  | |/ /___ _   _ ___
